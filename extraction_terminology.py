@@ -1,5 +1,12 @@
-
-
+import os
+import math
+import string
+import spacy
+from nltk.tokenize import word_tokenize
+import fnmatch
+from spacy.matcher import Matcher
+from collections import Counter, defaultdict
+import spacy
 
 nlp = spacy.load('en_core_web_lg')
 nlp.add_pipe('sentencizer')
@@ -62,7 +69,7 @@ def pointwise_mutual_info(vocab_freq, term_freq):
     return pointwise_value
 
 
-def _find_files(directory, pattern='*.jpg'):
+def _find_files(directory, pattern='*.txt'):
         """Recursively finds all files matching the pattern."""
         files = []
         for root, dirnames, filenames in os.walk(directory):
@@ -106,12 +113,12 @@ def extract_terminology(filepath, type):
     result = dict(sorted(result.items(), key=lambda item: item[1], reverse=True))
     return list(result.keys())[:300]
 
-terminology_extracted = extract_terminology("../input/new-term-corpus", type="single-word")
-terminology_extracted2 = extract_terminology("../input/new-term-corpus", type=None)
+terminology_extracted = extract_terminology("data", type="single-word")
+terminology_extracted2 = extract_terminology("data", type=None)
 
 import pandas as pd
 
 df = pd.DataFrame(terminology_extracted2, columns = ["Terminology"])
-df.to_csv("extracted_terminology_multiword.csv")
+df.to_csv("output/extracted_terminology_multiword.csv")
 df = pd.DataFrame(terminology_extracted, columns = ["Terminology"])
-df.to_csv("extracted_terminology_singleword.csv")
+df.to_csv("output/extracted_terminology_singleword.csv")
