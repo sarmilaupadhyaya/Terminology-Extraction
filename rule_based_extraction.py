@@ -2,13 +2,95 @@
 # generate random integer values
 from random import seed
 from random import randint
+import nltk
+from nltk.stem import WordNetLemmatizer
+from nltk.tokenize import word_tokenize
+from nltk.corpus import wordnet as wn
+import spacy
+from spacy.matcher import Matcher
+import nltk
 
-def rule_based_inference(sentence):
-    terms = []
-    seed(1)
-    for i in range(0,1):
-        length = len(sentence.split(" "))
-        terms.append([randint(0, length),randint(0, length)])
-    return terms
 
-sentence_term("I am doing a test")
+#get list of manually filtered terms
+def read_term_list(filename):
+    with open(filename, encoding="utf8") as f:
+        lines = f.readlines()
+        return [line.split(",")[1].strip("\n").lower() for line in lines]
+
+#convert list into spacy docs    
+def get_search_keys(filtered, nlp):
+    raw_terms = read_term_list(filtered) 
+    return  [nlp(term) for term in raw_terms]
+
+#generate patterns to match docs exactly
+def get_verbatim(doc):
+    return [{"LOWER": w.lower_} for w in doc]
+
+#patterns to match by lemma
+def get_lemmas(doc):
+    return [{"LEMMA": w.lemma_} for w in doc]
+
+#patterns to match by lemma with additional adjectives
+def specified(patterns):
+    out = []
+    for pattern in patterns:
+        out.append([{"POS" : "ADJ"}] + pattern)
+        out.append([{"POS" : "ADJ"}, {"POS" : "ADJ"}] + pattern)
+    return out    
+
+#create a matcher with all the patterns we will use
+def initialize_matcher(nlp, filtered):
+    matcher = Matcher(nlp.vocab)
+    #list of patterns matching our lowercased filtered list
+    verbatim = [get_verbatim(term) for term in filtered]
+    lemmas = [get_lemmas(term) for term in filtered]
+    specific = specified(lemmas + verbatim)
+    matcher.add("verbatim", verbatim)
+    matcher.add("lemmas", lemmas)
+    matcher.add("specific", specific)
+    return matcher
+
+#get rid of overlapping terms; that is, remove terms whose ends include parts of the next term
+def filter_overlap(terms):
+    non_overlapping = []
+    for i, term in enumerate(terms):
+        if (i < len(terms) - 1 
+            and (term[1] <= terms[i + 1][0] or (term[0] < terms[i + 1][0] and term[1] >=  terms[i + 1][1]))
+            and (not non_overlapping or term[1] > non_overlapping[-1][1])):
+            #if this term ends before the next one begins            if :
+            print(non_overlapping)
+            non_overlapping.append(term)
+        elif i == len(terms) - 1 and (not non_overlapping or term[1] > non_overlapping[-1][1]):
+            non_overlapping.append(term)    
+    return non_overlapping
+
+def rule_based_inference(sentence, nlp, matcher):
+    sentence_terms = []
+    doc = nlp(sentence)
+    matches = matcher(doc)
+    for match_id, start, end in matches:
+        span = (start, end)
+        sentence_terms.append(span)
+    #filter
+    return filter_overlap(sentence_terms)
+
+def main():
+    nlp = spacy.load('en_core_web_sm')
+    filtered_file = r"output\extracted_terminology_multiword.csv"
+    test_sentences = ["I like machine learning", 
+             "I am learning to sing",
+             "Translation involves two languages",
+             "Machine translation can be accomplished with neural machine learning tools",
+             "I saw a train on Tuesday",
+             "We trained a model",
+             "There is not enough optimized training data",
+             "The test corpus consists of 6000 sentences, all manually annotated."]
+    filtered = get_search_keys(filtered_file, nlp)
+    matcher = initialize_matcher(nlp, filtered)
+    term_locs = []
+    for sentence in test_sentences:
+        term_locs.append(rule_based_inference(sentence, nlp, matcher))
+    print(term_locs)
+
+if __name__ == "__main__":
+    main()

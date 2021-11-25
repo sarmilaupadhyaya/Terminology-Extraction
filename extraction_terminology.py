@@ -30,7 +30,7 @@ def validate(terminology):
             return False
     return True
 
-def get_terminology(data, type):
+def get_terminology(data, type, nlp=nlp):
     """
     """
     data = nlp(data)
@@ -113,12 +113,13 @@ def extract_terminology(filepath, type):
     result = dict(sorted(result.items(), key=lambda item: item[1], reverse=True))
     return list(result.keys())[:300]
 
-terminology_extracted = extract_terminology("data", type="single-word")
-terminology_extracted2 = extract_terminology("data", type=None)
+if __name__ == "__main__":
+    terminology_extracted = extract_terminology("data", type="single-word")
+    terminology_extracted2 = extract_terminology("data", type=None)
 
-import pandas as pd
+    import pandas as pd
 
-df = pd.DataFrame(terminology_extracted2, columns = ["Terminology"])
-df.to_csv("output/extracted_terminology_multiword.csv")
-df = pd.DataFrame(terminology_extracted, columns = ["Terminology"])
-df.to_csv("output/extracted_terminology_singleword.csv")
+    df = pd.DataFrame(terminology_extracted2, columns = ["Terminology"])
+    df.to_csv("output/extracted_terminology_multiword.csv")
+    df = pd.DataFrame(terminology_extracted, columns = ["Terminology"])
+    df.to_csv("output/extracted_terminology_singleword.csv")
