@@ -7,6 +7,7 @@ import fnmatch
 from spacy.matcher import Matcher
 from collections import Counter, defaultdict
 import spacy
+import pandas as pd
 
 nlp = spacy.load('en_core_web_lg')
 nlp.add_pipe('sentencizer')
@@ -95,6 +96,8 @@ def extract_terminology(filepath, type):
         total_terms.extend(terminologies)
 
     vocab_freq = dict(Counter(total_words))
+    ## remove frequency with lower count say 5
+    vocab_freq = {k:v for k,v in vocab_freq.items() if v>5}
 
     ## making terms title
     #total_terms = [term.title() for term in total_terms]
@@ -110,16 +113,14 @@ def extract_terminology(filepath, type):
     print(total_terms.most_common()[:20])
     #step 2: Pointwise
     result = total_terms.copy()
-    #result = pointwise_mutual_info(vocab_freq, total_terms)
+    result = pointwise_mutual_info(vocab_freq, total_terms)
     result = dict(sorted(result.items(), key=lambda item: item[1], reverse=True))
     return list(result.keys())[:300]
 
 terminology_extracted = extract_terminology("inference", type="single-word")
 terminology_extracted2 = extract_terminology("inference", type=None)
 
-import pandas as pd
-
-#df = pd.DataFrame(terminology_extracted2, columns = ["Terminology"])
-#df.to_csv("output/extracted_terminology_multiword.csv")
-#df = pd.DataFrame(terminology_extracted, columns = ["Terminology"])
-#df.to_csv("output/extracted_terminology_singleword.csv")
+df = pd.DataFrame(terminology_extracted2, columns = ["Terminology"])
+df.to_csv("output/extracted_terminology_multiword2.csv")
+df = pd.DataFrame(terminology_extracted, columns = ["Terminology"])
+df.to_csv("output/extracted_terminology_singleword2.csv")
