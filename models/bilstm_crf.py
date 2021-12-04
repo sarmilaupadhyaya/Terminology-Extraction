@@ -11,11 +11,9 @@ from keras_contrib.layers import CRF
 elmo_model = hub.Module("https://tfhub.dev/google/elmo/2", trainable=True)
 
 
-
-
 class ElmoBilstmCrf:
 
-    def __init__(self, max_len, batch_size, word_embedding_size, n_tags):
+    def __init__(self, max_len, batch_size, word_embedding_size, n_tags=2):
         
         self.max_len = max_len
         self.batch_size = batch_size

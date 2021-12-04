@@ -8,10 +8,15 @@ from spacy.matcher import Matcher
 from collections import Counter, defaultdict
 import spacy
 import pandas as pd
+from collections import defaultdict
 
 nlp = spacy.load('en_core_web_lg')
 nlp.add_pipe('sentencizer')
 matcher = Matcher(nlp.vocab)
+
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
+from sklearn.cluster import AgglomerativeClustering
 
 
 def read_file(file_path):
@@ -31,7 +36,7 @@ def validate(terminology):
             return False
     return True
 
-def get_terminology(data, type):
+def get_terminology(data, type, nlp=nlp):
     """
     """
     data = nlp(data)
@@ -88,39 +93,45 @@ def extract_terminology(filepath, type):
 
     total_words = []
     total_terms = []
+    doc_freq = defaultdict(list)
     for each_file in files:
-        data = read_file(each_file)
+        data= read_file(each_file)
         total_words += word_tokenize(data)
         terminologies = get_terminology(data, type)
         terminologies = [x for x in terminologies if validate(x)]
+        for word in set(terminologies):
+            if word in doc_freq:
+                doc_freq[word] += 1
+            else:
+                doc_freq[word] = 1
         total_terms.extend(terminologies)
-
-    vocab_freq = dict(Counter(total_words))
-    ## remove frequency with lower count say 5
-    vocab_freq = {k:v for k,v in vocab_freq.items() if v>5}
 
     ## making terms title
     #total_terms = [term.title() for term in total_terms]
-    print("*************************************************")
-    print("term extracted sorted according to their frequency are")
     total_terms = Counter(total_terms)
     total_terms.most_common()
-    print("***************************************************")
-
+    vocab_freq = Counter(total_words) 
     ## Statistical approaches to filterm term
     # Step 1: filter by frequency
     print("Common 20 term from the article are listed below:")
     print(total_terms.most_common()[:20])
-    #step 2: Pointwise
+    #step 2: Tf-idf
+    result = {each: math.log(len(files)/doc_freq.get(each, 0)) * total_terms.get(each, 0) for each, value in doc_freq.items()}
+    #result = pointwise_mutual_info(vocab_freq, total_terms)
     result = total_terms.copy()
-    result = pointwise_mutual_info(vocab_freq, total_terms)
     result = dict(sorted(result.items(), key=lambda item: item[1], reverse=True))
     return list(result.keys())[:300]
 
-terminology_extracted = extract_terminology("inference", type="single-word")
-terminology_extracted2 = extract_terminology("inference", type=None)
+if __name__ == "__main__":
+    terminology_extracted = extract_terminology("data", type="single-word")
+    df = pd.DataFrame(terminology_extracted, columns = ["Terminology"])
+    df.to_csv("output/extracted_terminology_singleword.csv")
+    terminology_extracted2 = extract_terminology("data", type=None)
+    print(terminology_extracted2)
+    df2 = pd.DataFrame(terminology_extracted2, columns = ["Terminology"])
+    df2.to_csv("output/extracted_terminology_multiword.csv")
+    df3 = pd.concat([df, df2], axis=0)
+    df3 =df3[["Terminology"]]
+    df3.to_csv("output/merged.csv")
 
-df = pd.DataFrame(terminology_extracted2, columns = ["Terminology"])
-df.to_csv("output/extracted_terminology_multiword2.csv")
-df = pd.DataFrame(terminology_extracted, columns = ["Terminology"])
-df.to_csv("output/extracted_terminology_singleword2.csv")
+

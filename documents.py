@@ -1,4 +1,4 @@
-import nltk
+
 class document:
     def __init__(self,filepath):
         self.text = open(filepath, "r").read()
@@ -10,7 +10,3 @@ class document:
             self.sen_to_iob[i] = convert_iob(each)
         
 
-## inference for rule based system
-doc = document("../input/new-term-corpus/Approaching Neural Grammatical Error Correction.txt")
-doc.create_iob()
-doc.sen_to_iob
