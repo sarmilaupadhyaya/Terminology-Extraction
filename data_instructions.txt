@@ -1,0 +1,29 @@
+------------Data Instruction------------------------
+
+1. List of raw articles: they are listed inside data/ folder with .txt extension
+
+2. terms extracted and filterd: they are listed inside output/ folder as follow
+
+	- extracted_terminology_multiword.csv
+	- extracted_terms_multi_tfidf.csv
+	- extracted_terms_multi_pointwise.csv
+
+3. Terms after analysing: They are listed insode output/ as well.
+- extracted_terminology_multiword_analysed.csv
+- extracted_terms_multi_pointwise_analysed.csv
+- extracted_terms_multi_tfidf_analysed.csv
+
+4. Silver annotated dataset: it is located inside data/silver_annotated/
+
+5.Gold annotation: it is inside data/ named as
+	gold_annotation.csv
+
+
+6. Result of terms extracted is inside output/ named as follow:
+
+	- extracted_goldfrequency.txt # the gold annotation terms list
+	- extracted_nnfrequency.txt  # extracted terms using NN module with frequency filtered candidates
+	- extracted_nntfidf.txt   # # extracted terms using NN module with tfidf filtered candidates
+	- extracted_rulefrequency.txt  # extracted terms using rule based system with frequency filtered candidates
+
+	- extracted_rulefrequency.txt  # extracted terms using rule based system with tfidf filtered candidates
