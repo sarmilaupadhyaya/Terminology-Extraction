@@ -18,62 +18,63 @@ some from intro
 
 ## Directory structure
 
-    ```
+```
+	.
+	├── bilm_inference.py
+	├── bilm_train.py
+	├── data
+	│   ├── gold_annotation.csv
+	│   ├── silver_annotated
+	│   │   ├── test_tfidf.tsv
+	│   │   ├── test.tsv
+	│   │   ├── train_tfidf.tsv
+	│   │   └── train.tsv
+	├── dataloader.py
+	├── documents.py
+	├── extraction_terminology.py
+	├── gold_annotated.py
+	├── images
+	│   ├── testing.png
+	│   └── training.png
+	├── inference
+	│   ├── clean_inference.txt
+	│   ├── clean.py
+	│   ├── g.py
+	│   └── inference.txt
+	├── models
+	│   ├── bert-crf.py
+	│   ├── bilstm_crf.py
+	│   └── rule_based_extraction.py
+	├── output
+	│   ├── chkpt
+	│   │   ├── markable-bi-lstm-td-model-2.hdf5
+	│   │   ├── markable-bi-lstm-td-model.hdf5
+	│   │   ├── markable-bi-lstm-td-model-pointwise.hdf5
+	│   │   └── markable-bi-lstm-td-model-tfidf.hdf5
+	│   ├── extracted_gold.txt
+	│   ├── extracted_nn.txt
+	│   ├── extracted_rule.txt
+	│   ├── extracted_terminology_multiword_analysed.csv
+	│   ├── extracted_terminology_multiword.csv
+	│   ├── extracted_terms_multi_pointwise_analysed.csv
+	│   ├── extracted_terms_multi_tfidf_analysed.csv
+	│   ├── extracted_terms_multi_tfidf.csv
+	│   ├── incorrect_sentence_new.txt
+	│   ├── incorrect_sentence_tfidf.txt
+	│   ├── tag2idx.pk
+	│   └── tag2idx_tdidf.pk
+	├── params.py
+	├── README.md
+	├── rule_based_extraction.py
+	├── run_train.sh
+	├── silver_annotated.py
+	├── term_extraction.py
+	├── test.tsv
+	├── train.tsv
+	└── utils.py
+
     
-├── bilm_inference.py
-├── bilm_train.py
-├── data
-│   ├── gold_annotation.csv
-│   ├── silver_annotated
-│   │   ├── test_tfidf.tsv
-│   │   ├── test.tsv
-│   │   ├── train_tfidf.tsv
-│   │   └── train.tsv
-├── dataloader.py
-├── documents.py
-├── extraction_terminology.py
-├── gold_annotated.py
-├── images
-│   ├── testing.png
-│   └── training.png
-├── inference
-│   ├── clean_inference.txt
-│   ├── clean.py
-│   ├── g.py
-│   └── inference.txt
-├── models
-│   ├── bert-crf.py
-│   ├── bilstm_crf.py
-│   └── rule_based_extraction.py
-├── output
-│   ├── chkpt
-│   │   ├── markable-bi-lstm-td-model-2.hdf5
-│   │   ├── markable-bi-lstm-td-model.hdf5
-│   │   ├── markable-bi-lstm-td-model-pointwise.hdf5
-│   │   └── markable-bi-lstm-td-model-tfidf.hdf5
-│   ├── extracted_gold.txt
-│   ├── extracted_nn.txt
-│   ├── extracted_rule.txt
-│   ├── extracted_terminology_multiword_analysed.csv
-│   ├── extracted_terminology_multiword.csv
-│   ├── extracted_terms_multi_pointwise_analysed.csv
-│   ├── extracted_terms_multi_tfidf_analysed.csv
-│   ├── extracted_terms_multi_tfidf.csv
-│   ├── incorrect_sentence_new.txt
-│   ├── incorrect_sentence_tfidf.txt
-│   ├── tag2idx.pk
-│   └── tag2idx_tdidf.pk
-├── params.py
-├── README.md
-├── rule_based_extraction.py
-├── run_train.sh
-├── silver_annotated.py
-├── term_extraction.py
-├── test.tsv
-├── train.tsv
-└── utils.py
-    
-    ```
+ ```
 
 
 ## Introduction
