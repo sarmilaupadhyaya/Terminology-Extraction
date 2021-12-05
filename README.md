@@ -169,6 +169,8 @@ _Optional_: If you're on Mac.
 
     python -m spacy download en_core_web_lg
 
+#### 7. Then, download the checkpoints from this link ![Link](https://drive.google.com/file/d/1W8g7d60hu8I9txYtfrcqLqUKTbTz02SA/view?usp=sharing)
+extract and put the folder inside output/
 ---
 
 
