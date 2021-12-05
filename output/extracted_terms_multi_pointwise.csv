@@ -1,301 +1,301 @@
 ,Terminology
-0,Slight Speedup
-1,Description Characters
-2,Ideographic Description
-3,Scientific Paper Excerpt
-4,Scientific Paper
-5,Paper Excerpt
-6,Environmental Declaration
-7,Young Scientists
-8,documentary team
-9,interrogative pronoun
-10,David Inman Olga
-11,Mayan Guatemala
-12,Guinea Indonesia
-13,Maipurean Peru
-14,David Inman
-15,Inman Olga
-16,Kristen Howell
-17,Royal Society London
-18,Hidden Gates
-19,Tianjin University
-20,Royal Society
-21,Society London
-22,rulebased hyphenation
-23,Barack Obama
-24,Sonnensystem Sonne
-25,Rendszer Hungarian
-26,dumme Situation
-27,Computational Linguistics
-28,Philadelphia July
-29,generally10 modelindependent
-30,unconditional surrender
-31,Likelihood Estimation
-32,collocazione giusta
-33,flower remedies
-34,Keywords multiword
-35,detokenized casesensitive
-36,Zingarelli Cannella
-37,Zanichelli editore
-38,Alexandra Birch
-39,chinese electronics
-40,Prime Ministers Office
-41,Loss Functions
-42,Innovation Center
-43,Prime Ministers
-44,Ministers Office
-45,Funding Initiative
-46,Negative Sampling
-47,TensorFlow Abadi
-48,OpenNMT Klein
-49,Quick Thought Logeswaran
-50,Distance Kusner
-51,bleu2vec Tattar
-52,Quick Thought
-53,Thought Logeswaran
-54,POS0 POS1
-55,PRESTO JPMJPR1856
-56,Sorbonne Universites UPMC
-57,Universites UPMC Univ
-58,Sorbonne Universites
-59,Universites UPMC
-60,UPMC Univ
-61,Latent Representations
-62,Kingdom British
-63,Katerina Margatina Giorgos
-64,Margatina Giorgos Vernikos
-65,Ethical Considerations
-66,Katerina Margatina
-67,Margatina Giorgos
-68,Giorgos Vernikos
-69,Viktor Hangya
-70,vietnam airlines
-71,laptop computers
-72,guangdong province
-73,President Bush
-74,Syntactic Categories
-75,Balancer Weight
-76,head1 headh
-77,Fairseq Hyperparameters
-78,Desmond Elliott
-79,NICT Japan
-80,noteworthy disadvantage
-81,YouTube Comments
-82,Share Blog
-83,Regularization Techniques
-84,inter alia
-85,Hong Kong Special
-86,Kong Special Administrative
-87,Special Administrative Region
-88,Hong Kong
-89,Kong Special
-90,Special Administrative
-91,Administrative Region
-92,IVF1024 HNSW32
-93,barg vuooelhusas
-94,maiddi oaidnn
-95,suerkiej sistie
-96,dvgebissuin bhin
-97,tutustutaan muun
-98,bargobjiid igge
-99,orthographic conventions
-100,Saemiedgkan dorjeme
-101,Constraint Grammar
-102,tjrrehtamme Saemiedigkien
-103,aahan Smedikki
-104,Erika Sarivaara
-105,Oriol Vinyals Richard
-106,Vinyals Richard Socher
-107,Panupong Pasupat Kelvin
-108,nationale Wirtschaft
-109,Projekt Europa
-110,Russell Stewart
-111,Oriol Vinyals
-112,Vinyals Richard
-113,Richard Socher
-114,Kayser Jiwei
-115,Panupong Pasupat
-116,Pasupat Kelvin
-117,plastics labs
-118,Plastic laboratories
-119,Adagrad Duchi
-120,allen Werten
-121,ECfunded H2020
-122,languagegrouped batching
-123,economic strength
-124,M2k0 kM1k0
-125,Samuelson 1937
-126,Meaning Ideographs
-127,Strokes Ideographs
-128,history warnings
-129,recorded material
-130,Inman Olga Zamaraeva
-131,Olga Zamaraeva Kristen
-132,Zamaraeva Kristen Howell
-133,Online Database
-134,Kiranti Nepal
-135,Emily Bender
-136,Goodman Ryan
-137,Olga Zamaraeva
-138,Zamaraeva Kristen
-139,Split Concat
-140,Federal Ministry
-141,sewage water
-142,parliamentary proceedings
-143,Electronics Polska
-144,Adadelta Zeiler
-145,Maja Popovic
-146,activity guidebook
-147,comprehensive catalog
-148,Candidates Countclip
-149,Mean StdDev
-150,lucky picks
-151,Cambridge Learner
-152,Miceli Barone
-153,false positives
-154,fluent disfluent
-155,Multiword Expressions
-156,chrF Popovi
-157,NLTK Loper
-158,yinhang yewu
-159,xingui jiangyu
-160,jiangyu sanyue
-161,sanyue yiri
-162,maximal dropping
-163,Beijing Advanced Innovation
-164,Advanced Innovation Center
-165,Ministers Office Singapore
-166,Singapore Funding Initiative
-167,Beijing Advanced
-168,Advanced Innovation
-169,Office Singapore
-170,Singapore Funding
-171,tail removal
-172,false negatives
-173,Donald Trump
-174,METEOR Banerjee
-175,Mean Squared
-176,vertical bars
-177,premature terminations
-178,Gradient Descent
-179,LDC2002E18 LDC2003E07
-180,LDC2003E07 LDC2003E14
-181,LDC2004T07 LDC2004T08
-182,UPMC Univ Paris
-183,LIP6 Paris France
-184,Univ Paris
-185,LIP6 Paris
-186,Paris France
-187,Ortiz Surez
-188,SacreBLEU2 Post
-189,Lexicon Induction
-190,LDC2003E14 Hansards
-191,RIBES Isozaki
-192,styles colours
-193,images substance
-194,ideal blend
-195,textual styles
-196,artificial intelligence
-197,tst2012 tst2013
-198,dialogue response
-199,Koran Subtitle
-200,vjhtene jaepesne
-201,vihtta jage
-202,nringer innenfor
-203,orre suerkine
-204,rasteilla tutustutaan
-205,derivational affixes
-206,wild animals
-207,Telemarksforskning tjrrehtamme Saemiedigkien
-208,Portuguese Masselot
-209,Apertium Forcada
-210,jaepie Minngemes
-211,Telemarksforskning tjrrehtamme
-212,real nummber
-213,enjoyable passenger
-214,Project Europe
-215,style guides
-216,indirect fonts
-217,production annuelle
-218,steel production
-219,Annual steel
-220,Character Decomposition
-221,UNICODE standards
-222,comparative purposes
-223,Level Units Ideograph
-224,Asian Scientific Paper
-225,Level Units
-226,Units Ideograph
-227,Asian Scientific
-228,Matsushita Electric
-229,person gender
-230,night cars
-231,Last night
-232,sequential inclusion
-233,unintended ambiguity
-234,Maipurean Peru Michael
-235,Morfessor Creutz
-236,Peru Michael
-237,modern hardware
-238,LNOutput LNInput
-239,Additionsubtraction Recurrent
-240,Scholarship Council
-241,treatment plant
-242,bezier smoothing
-243,Byte Pair
-244,NAIST Mizumoto
-245,Lang8 NAIST
-246,levxn ymin
-247,conferences transcripts
-248,Dictionary Backtrans
-249,electronics bank
-250,Perturbed Inputs
-251,MT05 MT08
-252,ground truth
-253,Alignment Figures
-254,MIRA Cherry
-255,Rewriter Evaluator
-256,Parameter Sharing
-257,Time Comparisons
-258,exciting progress
-259,constituency trees
-260,Recurrent Unit
-261,Communications Technology NICT
-262,Technology NICT Japan
-263,Stanford CoreNLP
-264,Communications Technology
-265,Technology NICT
-266,blog Sentiment
-267,humancomputer cooperation
-268,robotized interpretation
-269,snappy path
-270,instant modification
-271,master branch
-272,Domain Adaptation
-273,Nividia V100
-274,toiml pargopji
-275,peesih upsmu
-276,upsmu pivdoelleetipomn
-277,vjhte jaepieh
-278,weak norms
-279,deficient disambiguation
-280,functional posts
-281,functional workshop
-282,agent actions
-283,Richard Socher Michael
-284,Socher Michael Kayser
-285,Michael Kayser Jiwei
-286,Sent Lengths
-287,Berkeley Aligner
-288,Travel Association
-289,Socher Michael
-290,Michael Kayser
-291,zugeordnet werden
-292,Search Step
-293,Alle Werte
-294,Specific Subnetwork
-295,Case Study
-296,adjacent integers
-297,Transport Matrices
-298,Convolutional Seq2Seq
-299,official Romanization
+0,ab bc
+1,Sr Hu Hr
+2,Hu Hr Uk
+3,Nb Ka Mn
+4,Bg El
+5,Sr Hu
+6,Hu Hr
+7,Hr Uk
+8,Id
+9,Sv Sk
+10,Fi Hy
+11,Nb Ka
+12,Ka Mn
+13,Ms Az
+14,Slight Speedup
+15,Demi Guo
+16,Description Characters
+17,Ideographic Description
+18,Scientific Paper Excerpt
+19,Scientific Paper
+20,Paper Excerpt
+21,Environmental Declaration
+22,Young Scientists
+23,documentary team
+24,pronoun sa
+25,interrogative pronoun
+26,Uspanteko usp Mayan
+27,usp Mayan Guatemala
+28,David Inman Olga
+29,Uspanteko usp
+30,usp Mayan
+31,Mayan Guatemala
+32,Guinea Indonesia
+33,Maipurean Peru
+34,David Inman
+35,Inman Olga
+36,Kristen Howell
+37,Josef van Genabith
+38,Royal Society London
+39,Wo Wh
+40,Hidden Gates
+41,Josef van
+42,van Genabith
+43,Tianjin University
+44,Royal Society
+45,Society London
+46,rulebased hyphenation
+47,Naprendszer Nap Rendszer
+48,Nap Rendszer Hungarian
+49,Barack Obama
+50,Sonnensystem Sonne
+51,Naprendszer Nap
+52,Nap Rendszer
+53,Rendszer Hungarian
+54,dumme Situation
+55,Computational Linguistics ACL
+56,Linguistics ACL Philadelphia
+57,ACL Philadelphia July
+58,Computational Linguistics
+59,Linguistics ACL
+60,ACL Philadelphia
+61,Philadelphia July
+62,generally10 modelindependent
+63,unconditional surrender
+64,Likelihood Estimation
+65,collocazione giusta
+66,giusta sul
+67,sul mercato
+68,flower remedies
+69,Keywords multiword
+70,detokenized casesensitive
+71,Zingarelli Cannella
+72,Zanichelli editore
+73,Alexandra Birch
+74,chinese electronics
+75,Prime Ministers Office
+76,Loss Functions
+77,Innovation Center
+78,Prime Ministers
+79,Ministers Office
+80,Funding Initiative
+81,Bengali bn Malayalam
+82,Bengali bn
+83,bn Malayalam
+84,Negative Sampling
+85,TensorFlow Abadi
+86,OpenNMT Klein
+87,Czech cz
+88,Quick Thought Logeswaran
+89,JST PRESTO JPMJPR1856
+90,Distance Kusner
+91,bleu2vec Tattar
+92,Quick Thought
+93,Thought Logeswaran
+94,POS0 POS1
+95,JST PRESTO
+96,PRESTO JPMJPR1856
+97,Sorbonne Universites UPMC
+98,Universites UPMC Univ
+99,Sorbonne Universites
+100,Universites UPMC
+101,UPMC Univ
+102,CNRS UMR
+103,Latent Representations
+104,Britain UK
+105,Kingdom British
+106,Katerina Margatina Giorgos
+107,Margatina Giorgos Vernikos
+108,Ethical Considerations
+109,Katerina Margatina
+110,Margatina Giorgos
+111,Giorgos Vernikos
+112,Viktor Hangya
+113,vietnam airlines
+114,laptop computers
+115,guangdong province
+116,VP QP Others
+117,Zhengdong Lu Lili
+118,Lu Lili Mou
+119,President Bush
+120,Syntactic Categories
+121,VP QP
+122,QP Others
+123,Balancer Weight
+124,Zhengdong Lu
+125,Lu Lili
+126,Lili Mou
+127,head1 headh
+128,Fairseq Hyperparameters
+129,Mixed Enc
+130,Desmond Elliott
+131,NICT Japan
+132,noteworthy disadvantage
+133,YouTube Comments
+134,Share Blog
+135,Daume III
+136,Regularization Techniques
+137,inter alia
+138,Hong Kong Special
+139,Kong Special Administrative
+140,Special Administrative Region
+141,IVF1024 HNSW32 SQ8
+142,Hong Kong
+143,Kong Special
+144,Special Administrative
+145,Administrative Region
+146,Wvht bv
+147,IVF1024 HNSW32
+148,HNSW32 SQ8
+149,barg vuooelhusas
+150,particle ge
+151,maiddi oaidnn
+152,suerkiej sistie
+153,har gjennomfrt
+154,dvgebissuin bhin
+155,tutustutaan muun
+156,bargobjiid igge
+157,orthographic conventions
+158,Saemiedgkan dorjeme
+159,Constraint Grammar
+160,tjrrehtamme Saemiedigkien
+161,aahan Smedikki
+162,Erika Sarivaara
+163,Quoc Le Ilya
+164,Oriol Vinyals Richard
+165,Vinyals Richard Socher
+166,Panupong Pasupat Kelvin
+167,nationale Wirtschaft
+168,Projekt Europa
+169,Russell Stewart
+170,Quoc Le
+171,Le Ilya
+172,Oriol Vinyals
+173,Vinyals Richard
+174,Richard Socher
+175,Kayser Jiwei
+176,Panupong Pasupat
+177,Pasupat Kelvin
+178,plastics labs
+179,Plastic laboratories
+180,Bei allen Werten
+181,Adagrad Duchi
+182,Bei allen
+183,allen Werten
+184,ECfunded H2020
+185,languagegrouped batching
+186,economic strength
+187,kM1 M2k0 kM1k0
+188,Win Ratio
+189,Sim M1
+190,kM1 M2k0
+191,M2k0 kM1k0
+192,Id Th
+193,Th Sv Sk
+194,Ku Gl Mr
+195,Ur Eo Ms
+196,Eo Ms Az
+197,Samuelson 1937
+198,Th Sv
+199,Ku Gl
+200,Gl Mr
+201,Ur Eo
+202,Eo Ms
+203,Hao Zhou
+204,Meaning Ideographs
+205,Strokes Ideographs
+206,history warnings
+207,ni ase
+208,recorded material
+209,Emily Bender Fei
+210,Inman Olga Zamaraeva
+211,Olga Zamaraeva Kristen
+212,Zamaraeva Kristen Howell
+213,Online Database
+214,Kiranti Nepal
+215,Emily Bender
+216,Bender Fei
+217,Goodman Ryan
+218,Olga Zamaraeva
+219,Zamaraeva Kristen
+220,Split Concat
+221,Federal Ministry
+222,sewage water
+223,parliamentary proceedings
+224,Electronics Polska
+225,Adadelta Zeiler
+226,Maja Popovic
+227,activity guidebook
+228,comprehensive catalog
+229,Max Re
+230,Candidates Countclip
+231,Mean StdDev
+232,lucky picks
+233,Cambridge Learner
+234,Miceli Barone
+235,una telefonata
+236,false positives
+237,fluent disfluent
+238,Multiword Expressions
+239,chrF Popovi
+240,NLTK Loper
+241,yinhang yewu
+242,xingui jiangyu
+243,jiangyu sanyue
+244,sanyue yiri
+245,yiri qi
+246,maximal dropping
+247,Beijing Advanced Innovation
+248,Advanced Innovation Center
+249,Ministers Office Singapore
+250,IRC Singapore Funding
+251,Singapore Funding Initiative
+252,Beijing Advanced
+253,Advanced Innovation
+254,Office Singapore
+255,IRC Singapore
+256,Singapore Funding
+257,tail removal
+258,false negatives
+259,Telugu te Bengali
+260,te Bengali bn
+261,Donald Trump
+262,Telugu te
+263,te Bengali
+264,IIT Bombay
+265,METEOR Banerjee
+266,Mean Squared
+267,vertical bars
+268,premature terminations
+269,Gradient Descent
+270,h2 hn
+271,LDC2002E18 LDC2003E07
+272,LDC2003E07 LDC2003E14
+273,LDC2004T07 LDC2004T08
+274,UPMC Univ Paris
+275,LIP6 Paris France
+276,Univ Paris
+277,LIP6 Paris
+278,Paris France
+279,Ortiz Surez
+280,SacreBLEU2 Post
+281,Lexicon Induction
+282,Web forums
+283,LDC2003E14 Hansards
+284,RIBES Isozaki
+285,styles colours
+286,images substance
+287,ideal blend
+288,textual styles
+289,artificial intelligence
+290,tst2012 tst2013
+291,dialogue response
+292,PM PLi
+293,Xi Zj
+294,Xi Yi
+295,Koran Subtitle
+296,vjhtene jaepesne
+297,vid jage
+298,vihtta jage
+299,lea maiddi

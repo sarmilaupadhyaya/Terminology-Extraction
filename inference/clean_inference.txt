@@ -1,0 +1,515 @@
+
+Progress in Machine Translation
+
+After more than 70 years of evolution, great achievements have been made in machine translation.
+Especially in recent years, translation quality has been greatly improved with the emergence of neural machine translation (NMT).
+In this article, we first review the history of machine translation from rule-based machine translation to example-based machine translation and statistical machine translation.
+We then introduce NMT in more detail, including the basic framework and the current dominant framework, Transformer, as well as multilingual translation models to deal with the data sparseness problem.
+In addition, we introduce cutting-edge simultaneous translation methods that achieve a balance between translation quality and latency.
+We then describe various products and applications of machine translation.
+At the end of this article, we briefly discuss challenges and future research directions in this field.
+1.
+A brief history of machine translation (MT)
+
+MT is the study of how to use computers to translate from one language into another.
+The concept of MT was first put forward by Warren Weaver in 1947 [1], just one year after the first computer, electronic numerical integrator and computer, was developed.
+From then on, MT has been considered to be one of the most challenging tasks in the field of natural language processing (NLP).
+In terms of methodology, approaches to MT mainly fall into two categories: rule-based methods and corpus-based methods.
+From the time when the idea of MT was first proposed until the 1990s, rule-based methods were dominant.
+Rule-based machine translation (RBMT) methods use bilingual dictionaries and manually written rules to translate source language texts into target language texts.
+However, manually writing rules is labor intensive.
+Furthermore, rules are difficult to maintain and difficult to transfer from one domain to another, and from one language to another.
+Thus, it is difficult for rule-based systems to be scalable for open-domain translation and multilingual translation.
+At the very beginning, MT systems were mainly designed for military applications.
+In 1954, Georgetown University, with the cooperation of the now well-known computer manufacturer International Business Machines Corporation (IBM), completed a Russian–English MT experiment for the first time using the IBM-701 computer, demonstrating that the dream of MT had become true.
+MT was a hot topic for more than a decade after the 1954 demonstration, but the boom ended abruptly with the Automatic Language Processing Advisory Committee (ALPAC) report in 1966 [2].
+After the report, which was very skeptical of MT and led to a drastic cut in funding for MT research, it became extremely difficult to work on MT.
+The dominant scientific society today, the Association for Computational Linguistics (ACL), was originally named the Association for Machine Translation and Computational Linguistics in 1962, during the boom; however, it dropped the “MT” from its name in 1968, during the bust after the ALPAC report.
+Meanwhile, MT researchers continued to attempt
+to improve translation quality.
+In 1965, NLP researchers held the first International Conference on Computational Linguistics, which focused on rule-based parsing and translation.
+Starting in the 1970s, RBMT methods became more mature.
+In 1978, SYSTRAN, one of the first MT companies, launched a commercial translation system, which was one of the best-known examples of a commercially successful rule-based system at that time.
+Google used the service of SYSTRAN until 2007.
+With the availability of bilingual corpora, corpus-based methods became dominant after the 2000s.
+There are three corpus-based MT methods: example-based machine translation (EBMT), statistical machine translation (SMT), and neural machine translation (NMT).
+In the mid-1980s, EBMT was proposed to translate source texts by retrieving similar sentence pairs from the bilingual corpus [3].
+The translation results from EBMT methods are of high quality if similar sentence pairs can be retrieved.
+However, EBMT methods have low coverage of translations because the bilingual corpora cannot cover all the linguistic phenomena of the language pairs.
+As a result, EBMT methods are usually used in computer-aided translation systems.
+In 1990, Brown et al.
+[4] proposed the idea of SMT, in which machines automatically learn translation knowledge from a large amount of data instead of relying on human experts to write rules.
+The idea was more formally formulated as five different SMT models in 1993 [5].
+SMT methods were not widely adopted at that time due to their complexity and the dominance of RBMT in commercial applications during the 1980s and 1990s.
+However, with the emergence of statistical methods, another NLP
+conference—the Empirical Methods in Natural Language Processing conference—began in 1996, with the aim of bringing together empirical methods from a range of different disciplines, including corpus-based methods from linguistics and information theory from engineering [6].
+In 1999, researchers held a summer workshop at Johns Hopkins University [7], at which they reproduced five IBM models and released an SMT toolkit named Egypt, which greatly reduced the threshold of SMT.
+The word-based SMT
+toolkits GIZA and GIZA++ were subsequently released [8].
+In 2003, phrase-based SMT methods were proposed [9], which further improved the translation quality.
+Based on phrase-based SMT methods, open-source systems such as “Pharaoh” and its upgraded version, “Moses,” were released [10], greatly promoting the development of SMT systems.
+After that, SMT methods were widely adopted because of these available toolkits.
+In 2006, Google launched its internet translation service based on phrase-based SMT methods.
+Other companies such as Microsoft and Baidu also launched translation services in the years that followed.
+It should be noted that it is difficult for a single model to deal with various translation requests; thus, practical systems usually use hybrid methods [11] that integrate different MT models in order to improve translation performance.
+Encouraged by the success of SMT models, many researchers proposed novel models to further improve the performance of SMT methods, including factored SMT
+Although the use of SMT methods greatly improved the translation quality, such methods employ log-linear models to integrate multiple manually designed components such as a translation model, a language model, and a reordering model, which usually results in a serious reordering problem for distant language pairs.
+With strong progress in deep learning technology in speech, vision, and other fields, researchers began to apply deep learning technology to MT.
+In 2014, Bahdanau et al.
+[18] and Sutskever et al.
+[19] proposed end-to-end neural network translation models and formally used the term “neural machine translation.” The basic idea of NMT is to map the source language into a dense semantic representation, and then generate the translation by using an attention mechanism.
+At the same time, Dong et al.
+[20] proposed a multilingual translation framework based on NMT, which is considered to be a breakthrough paper for multilingual translation in the history of NMT.
+In 2015, Baidu deployed the first large-scale NMT system in the world [21] .
+In 2016, Google also launched an NMT system [22], which was followed by other companies releasing their NMT systems.
+Thus, it only took about one year for NMT
+to be deployed online since it was first proposed in 2014, while it took about 16 years for SMT systems to be applied to online service.
+After that, a convolutional sequence-to-sequence translation model [23] and the Transformer model [24] were proposed, which again significantly improved the translation quality.
+This great improvement triggered a wide-ranging discussion on whether MT is as good as human translation.
+The great success of NMT has attracted many researchers who have developed various methods such as non-autoregressive models [25,26], unsupervised NMT models [27,28], and pretraining models on NMT [29], with the aim of improving multilingual translation quality and translation efficiency.
+The great improvements that have been achieved in both speech technologies and MT have led to simultaneous translation (ST) as another promising direction for MT.
+Exploration in spoken language translation or speech translation began with a small experimental automatic interpreting system that was 2
+demonstrated at the International Telecommunication Union expo in 1983 [30].
+Subsequently, a speech-to-speech (S2S) translation system called SpeechTrans was developed in 1988 [31], and was considered to be an important landmark system in speech translation [32].
+In the following two decades, particularly since the establishment of the Consortium for Speech Translation Advanced Research in 1991, impressive speech translation systems have been developed, from domain-limited and vocabulary-limited systems
+[33–35] to open-domain spontaneous translations [36–40].
+Meanwhile, the International Workshop on Spoken Language Translation (IWSLT) was organized in 2004, which again promoted the development of speech translation systems [39].
+With the emergence of NMT and neural speech recognition, new ST systems are intended to automate simultaneous interpreting, in which the translation system interprets concurrently with the source-language speech, with a delay of only a few seconds.
+Simultaneous interpretation is extremely challenging and exhausting for humans, as it requires extreme concentration and skill to listen to and comprehend one language while speaking another.
+Thus, there are a limited number of qualified simultaneous interpreters worldwide.
+Furthermore, simultaneous interpreters usually work in teams of two or more and swap places every 15–30 min to prevent the error rate from growing exponentially [38].
+Moreover, limited memory forces human interpreters to routinely omit source content [41].
+Therefore, there is a critical need to develop simultaneous MT techniques to reduce the burden of human interpreters and to make simultaneous interpreting services more accessible and affordable.
+To this end, as an early work, Wang et al.
+[42]
+proposed a neural network-based method to split streaming speech into appropriate segments in order to improve speech translation quality.
+Ma et al.
+[43] developed an extremely simple but effective “prefix-to-prefix” framework that is tailored to the simultaneity requirement and can implicitly anticipate directly on the target side.
+This technique achieved controllable latency for the first time and rejuvenated the NLP
+community’s interest in ST.
+Since then, many major research laboratories (i.e., Google, Microsoft, Facebook, Huawei, etc.)
+have joined the research in this direction, and commercial products from companies such as Baidu have been serving hundreds of conferences.
+This renewed interest resulted in the First Workshop on Automatic ST being held at ACL 2020 and a new ST track at IWSLT 2020.
+2.
+Neural machine translation
+
+
+There has been great improvement in NMT in recent years [44,45].
+A typical NMT model contains two components: An encoder network maps the source sentence into a real-valued vector, from which a decoder network produces the translation.
+This process is analogous to a human’s translation.
+The NMT
+
+model first “reads” the whole source sentence; then, based on its understanding of the sentence, the model generates the target sentence word by word.
+Compared with previous methods such as RBMT and SMT, NMT does not need human-designed rules and features.
+NMT is an end-to-end framework that directly learns semantic representation and translation knowledge from the training corpora.
+With these advantages, NMT is now the dominant method in the MT community.
+In this section, we first introduce NMT models and their key components, including basic recurrent neural network (RNN)-based models and their improvements, as well as the state-of-the-art NMT
+
+architecture, Transformer.
+Next, we describe multilingual translation and discuss methods such as backtranslation and pivot-based translation for making full use of data, and methods such as multitask learning and universal models for improving NMT.
+We then introduce the latest progress in ST, including the cascaded model that pipelines automatic speech recognition (ASR), MT, and text-to-speech (TTS), and the end-to-end approach that directly models speech recognition and MT.
+2.1.
+NMT model
+
+A typical NMT model is built based on a standard RNN or its alternative [18,19].
+Given a source sentence 𝑥 = {𝑥1, 𝑥2, … , 𝑥𝑇 } (where T
+
+𝑥
+
+x is the length of 𝑥), the encoder RNN compresses 𝑥 into the hidden states ℎ = {ℎ1, ℎ2, … , ℎ𝑇 } as follows: 𝑥
+
+
+
+ℎ𝑡 = 𝑔(ℎ𝑡−1, 𝑥𝑡, 𝜃)
+
+(1)
+
+where 𝑔(. )
+is the activation function of the network; ℎ𝑡 and 𝑥𝑡 are the hidden state and the source token at time 𝑡, respectively; t is the time step; θ is a set of model parameters.
+In the basic model, the encoder takes the last hidden state ℎ𝑇 as the representation of the source sentence.
+Then the decoder RNN
+
+𝑥
+
+produces translations as follows:
+
+𝑇
+
+
+
+𝑝(𝑦|𝑥) = ∏ 𝑦 𝑝(𝑦
+
+
+
+(2)
+
+𝑡=1
+
+𝑡|𝑦<𝑡, 𝒄)
+
+3
+
+
+
+where 𝑦 = {y1, 𝑦2, … , 𝑦𝑇 } is the target sentence, p( y|x) is the translation probability, T
+
+𝑦
+
+y is the length of
+
+𝑦, c is a vector generated from the hidden states ℎ, yt is the target word, 𝑦<𝑡 = {𝑦1, 𝑦2, … , 𝑦𝑡−1} contains the target words that have been already generated.
+One of the weaknesses of the standard RNN model is that the information decays rapidly during transmission in the network; thus, the translation quality drops heavily for long sentences.
+To overcome this issue, Bahdanau et al.
+[18] proposed three novel improvements, which are widely used in NMT
+
+models.
+These are described one by one below.
+2.1.1.
+The attention mechanism
+
+When generating a target word, instead of using the last hidden state ℎ𝑇𝑥 to represent the source sentence, the attention mechanism computes the association between the target token and all the source words, and evaluates how strong the association is.
+where 𝒄𝑡 is the contextual vector, ℎ𝑗 is the hidden state of the source word 𝑥𝑗, j is the word index of 𝑥, 𝑎𝑡𝑗 is the association weight of the target word 𝑦𝑡 and ℎ𝑗, which is computed as follows:
+
+where 𝑒𝑡𝑗 is the alignment model parametrized as a feed-forward neural network, 𝑖 is the word index of 𝑥.
+In fact, the attention mechanism is analogous to the “word alignment” used in SMT.
+Word alignment in SMT is a “hard alignment,” which indicates whether a source word and a target word have a link or not, while the attention mechanism is a “soft alignment,” which links a target word to all source words with different weights.
+The attention mechanism significantly improves the translation quality, making NMT a breakthrough technology in the MT history.
+2.1.2.
+Bidirectional encoding
+
+Instead of a unidirectional encoder, some methods employ a bidirectional encoder.
+To be specific, a bidirectional encoder computes hidden states from both the left-to-right and right-to-left directions, such as ℎ
+
+information of the source sentence, which again improves the translation quality.
+2.1.3.
+Gated recurrent unit
+
+The gated recurrent unit (GRU) is an alternative to conventional simple activation functions.
+GRU is analogous to long short-term memory (LSTM) [46], but is much more efficient.
+Both GRU and LSTM
+
+allow the network to learn long-distance dependency without suffering too much from the gradient vanishing problem [47].
+Preliminary experiments on NMT showed significant improvements over conventional SMT.
+However, the early NMT models still had weaknesses, such as the out-of-vocabulary (OOV) problem, under-translation, and a slow decoding speed.
+To overcome these problems, He et al.
+[48] proposed the incorporation of statistical features such as the phrase table, the N-gram language model, and the length penalty into NMT.
+Along with this direction, researchers borrowed ideas from SMT and incorporated into NMT rich features, such as coverage [49], alignment agreement [50], syntax information [51–53], phrase tables [54,55], and translation recommendations [56].
+Sennrich et al.
+[57] used the compression algorithm byte-pair-encoding [58] for word segmentation that compacts open vocabularies into a fixed-size vocabulary of sub-words.
+This method is simple and efficient, so it is widely used in NMT for addressing the translation of OOV words and rare words.
+Aside from RNN, researchers have put forward other model architectures.
+One weakness of RNN-based NMT is its lack of parallelization capability, as the computation of the current word depends on the previous words.
+Convolutional neural networks (CNNs), which are commonly used in computer vision, have been introduced to NMT [23].
+Compared with RNN, a convolutional network creates hierarchical representations over sequences with short paths to capture long-distance dependencies, which makes the computations fully parallelized during training.
+Inspired by the CNN NMT methods, Vaswani et al.
+[24] proposed a novel network named Transformer, which is built solely on attention mechanisms without any recurrences or convolutions.
+There are three kinds of attention in this method: encoder self-attention, decoder-masked attention, and encoder–
+
+decoder attention.
+The researchers proposed a novel scaled dot-product method to represent these kinds of attention.
+where Q, K, and V are the query, key, and value vectors, respectively; √𝑑 is the scaling factor; 𝑲T is the transpose of K. More specifically, for each word, the model creates three vectors—a query vector, a key vector, and a value vector—by multiplying the word embeddings with different parameter metrics.
+The role of the attention is to compute a weighted sum of the values as an output that will be transferred to the next layer.
+In addition, the researchers proposed a multihead attention mechanism.
+𝑚 = Attention(𝑸𝑊𝑚 , 𝑲𝑊𝑚 , 𝑽𝑊𝑚 )(1 ≤ 𝑚 ≤ 𝑀) denotes different 𝑸
+
+attention spaces, and 𝑊
+
+
+𝑊𝑂 are parameter matrices.
+The function
+
+Concat(head1, … , head𝑀) concatenates all heads together.
+Compared with recurrent and convolutional networks, Transformer has stronger parallelization and representation ability; thus, it achieves state-of-the-art performance not only in MT, but also in many other NLP tasks, such as the recent well-known pretraining models: bidirectional encoder representation from transformer (BERT) [59] and enhanced representation through knowledge integration (ERNIE [60].
+The above models are autoregressive models in which each output word depends on previous outputs.
+This setup limits the models’ parallelization capability during decoding.
+Gu et al.
+[25] proposed a non-autoregressive transformer (NAT), which can generate target sequences in parallel.
+where 𝑇 is the length of the target sentence, which is modeled with a conditional distribution 𝑝𝐿(𝑇|𝑥; 𝜙); 𝜙 is a set of model parameters.
+Unlike autoregressive models, which stop decoding when generating the special token end-of-sentence (</s>), non-autoregressive models must first predict the length of the target sequence with 𝑝𝐿(𝑇|𝑥; ∅).
+Although NAT achieves remarkable speedup during decoding, the translation quality is greatly degraded.
+The main possible reason is that it does not model word dependency, which is crucial for translation improvement.
+Encouraged by the decoding efficiency, researchers have proposed many methods to improve the non-autoregressive models, including knowledge distillation [61], imitation learning [26], and curriculum learning [62].
+2.2.
+Multilingual translation
+
+Different languages have different morphologies and structures, which makes translation among languages a difficult task—not only for MT, but also for human experts.
+For example, Chinese and English are subject-verb-object languages, while Japanese and Korean are subject-object-verb languages.
+When performing translation between Chinese and Japanese, long-distance reordering is usually required.
+In addition, Chinese is an isolating language with few morphological changes, while Japanese is an agglutinative language with rich word morphological changes.
+All of these differences make multilingual MT particularly difficult.
+Data-driven MT methods—that is, SMT or NMT—attempt to learn the translation knowledge from a large quantity of parallel data.
+In general, an increased amount of training data results in an improved translation quality.
+Koehn and Knowles [63] showed that when the training words increased from 0.4
+
+million to 385.7 million for English–Spanish translation, the translation quality improved by about 30%
+
+(absolute) in terms of bilingual evaluation understudy (BLEU) score.
+Unfortunately, most of the world’s languages lack parallel data, and are thus referred to as “resource-poor” languages.
+Building an NMT system for these languages is a great challenge due to the data sparseness problem.
+According to Internet World Stats, the number of users of the world’s top ten languages (English, Chinese, Spanish, Arabic, Portuguese, Indonesian/Malay, French, Japanese, Russian, 5
+
+
+
+and German) on the Internet account for about 77% of the total number of Internet users.
+Of these, English and Chinese users account for 25.9% and 19.4%, respectively, while the sum of all other language users only accounts for 23.1%.
+For resource-rich languages such as Chinese and English, it is possible to collect billions of sentence pairs to train an MT model; however, for resource-poor language pairs such as Chinese–Hindi or Chinese–Kiswahili, there are only thousands of sentence pairs or less.
+In addition, the deployment of multilingual translation systems costs a great deal.
+If we suppose that translation will be performed among N languages ( N is the number of languages), it is usually necessary to build a translation model for each translation direction (e.g., Chinese-to-English and English-to-Chinese are two translation directions).
+In this case, it is necessary to build 𝑁 × (𝑁 − 1) translation models for N
+
+languages.
+With the success of NMT models, researchers have been seeking new ways to overcome the above challenges.
+In general, there are two kinds of methods for multilingual translation: methods that make full use of data and methods that improve NMT models.
+Since multilingual translation among resource-poor languages lacks training data, it can be intuitively seen that it is necessary to collect more training data and make full use of the potential of that data.
+Compared with parallel corpus collection, it is easier to obtain a large amount of monolingual corpus.
+In NMT, the monolingual corpus is usually used for training data augmentation.
+One widely used method is back-translation [64,65], in which the main idea is to first train a standard NMT model on a small parallel corpus, and then use the model to translate a large quantity of monolingual data (e.g., sentences in the target languages) into the other side, so as to generate a “pseudo bilingual corpus” that can be used to retrain the translation model.
+In an extreme case, there may be no parallel corpus at all.
+To solve this problem, unsupervised translation methods have been proposed to build translation systems that are only based on the source and target monolingual corpora.
+Lample et al.
+[66] proposed mapping sentences in different languages into the same latent space and learning to translate by reconstructing sentences.
+Artetxe et al.
+[67] used an improved SMT model to initialize an unsupervised NMT model in order to further improve translation quality.
+Song et al.
+[29], Conneau and Lample [68], and Ren et al.
+[69] proposed an unsupervised NMT model to leverage the pretraining method.
+Another research line is to leverage the resource-rich languages in order to improve the translation of resource-poor languages.
+This method can date back to the SMT era.
+The most widely used method is pivot-based translation, in which a high-resource language is used as the pivot language to build a bridge between low-resource language pairs [70].
+For example, to develop a Chinese–German translation system, English can be chosen as the pivot language, since there is a large quantity of Chinese–English and English–German parallel data available.
+The simplest pivot-based translation method is the transfer method, which uses two cascaded translation systems [71,72]: the source–pivot translation system, which translates the source sentence into the pivot sentence; and the pivot–target translation system, which translates the pivot sentence into the target sentence.
+This method is widely used in practical systems because it is easy to implement.
+The weakness of this method is that the cascaded system suffers from the error propagation problem.
+Wu and Wang [73,74] and Cohn and Lapata [75] proposed a triangulation method to learn phrase-level translation knowledge by inducing a source–target translation model from source–pivot and pivot–target translation models.
+NMT methods leverage the source-rich languages to improve the translation quality of resource-poor languages by using a universal model.
+Traditional MT methods require separate translation models for each language pair and each task, whereas NMT makes it possible to translate multiple languages across different tasks within a universal model.
+In general, this research can be classified into three categories: one-to-many, many-to-one, and many-to-many (M2M), depending on the number of languages on the source and target side.
+Dong et al.
+[20] proposed a novel multitask learning method for multilingual NMT.
+As Fig.
+1 shows, by sharing source representations with a shared-encoder, the model can make full use of the source language corpus across different language pairs.
+This method provides a unified framework for exploring the problem of translating one source language into multiple target languages.
+To deploy translation systems among N languages, the model only needs to train N encoders.
+Luong et al.
+[76] extended the framework to multitasks, including translation, parsing, and image captioning.
+Zoph and Knight [77]
+
+proposed a many-to-one NMT model that shares the decoder on the target side.
+Firat et al.
+[78] used different encoders and decoders with a shared attention mechanism for M2M translation.
+Johnson et al.
+[79] proposed a simple approach that put all languages together to train a single encoder–decoder model to perform multilingual translation.
+The researchers added a special token to the beginning of the source sentence to indicate which target language it is translated into.
+This approach allows the NMT model to learn shared representations for linguistically similar languages [80], so no change is made to the NMT model architecture.
+Considering the diversity of languages, Tan et al.
+[81]
+studied how to group languages into several clusters and train a single NMT model for each cluster.
+In a practical system, a hybrid translation method is usually used, which combines the above methods while considering translation efficiency, deployment cost, and so forth.
+Thanks to technological progress, current translation systems can support translation among hundreds of languages.
+Arivazhagan et al.
+[82]
+
+proposed a method for a massively multilingual MT that trains a single model with over 50 billion parameters on more than 25 billion sentence pairs, from 103 languages to and from English.
+Fan et al.
+[83]
+proposed an M2M-100 model that is trained on 7.5 billion sentence pairs and can perform translation between any pair of 100 languages.
+2.3.
+Simultaneous translation
+
+ST aims to achieve real-time translation with high quality and an as-short-as-possible delay between the source language speech and the translation output.
+In full-sentence translation (Section 2.1), each target word 𝑦𝑡 is predicted using the entire source sentence 𝑥.
+In ST, however, it is necessary to translate concurrently with the (growing) source sentence.
+Research on ST falls into two categories: the cascaded (pipeline) method and the end-to-end method.
+2.3.1.
+Simultaneous S2S translation pipeline
+
+A typical cascaded ST system consists of an ASR system that transcribes the source speech into source streaming text, an MT system that performs the translation from the source text into the target text and, finally, a TTS system to generate the target–language speech, as illustrated in Fig.
+2.
+In practice, the TTS system is optional, depending on whether the output is text or speech in different application scenarios.
+As mentioned, one of the biggest challenges in ST is achieving high translation quality with low latency.
+The streaming ASR output has no segmentation boundaries, while traditional MT systems take sentences with clear boundaries as input.
+Thus, there is a gap between the output of ASR and the input of MT.
+If a translation starts before adequate source content has been delivered, the translation quality degrades.
+However, waiting for too many source words increases the latency.
+In general, two types of recent work split the ASR output into appropriate segments for the downstream MT system: fixed policies that consider fixed-length contexts and adaptive policies that obtain source segments dynamically.
+Fixed policies are hard policies that follow a predefined schedule that is independent of the context.
+Such policies segment the source text based on a fixed length [43,84].
+Ma et al.
+[43] proposed a simple wait- k policy under a prefix-to-prefix architecture, where k is the number of words that the model firstly read, and then translates concurrently with the rest of the source sentence; that is, the output is always k words after the input.
+This policy was inspired by human simultaneous interpreters, who generally start translating a few seconds after the speaker’s speech, and who finish with a few seconds’ delay after the speaker finishes.
+For example, if k = 2, the first target word is predicted using the first two source words, the second target word is predicted using the first three source words and the generated target word, and so forth.
+More formally, Ma et al.
+[43] used the source prefix {𝑥1, 𝑥2, … , 𝑥𝑞(𝑡)} rather than the whole source sentence to predict 𝑦𝑡: 𝑝(𝑦𝑡|𝑦<𝑡, 𝑥≤𝑞(𝑡)), where 𝑞(𝑡) is a monotonic non-decreasing function that denotes the number of source words processed by the encoder when predicting 𝑦𝑡 .
+Generally speaking,
+
+q( t) can be used to represent arbitrary policies.
+There are two special cases where q( t) is constant: ① q( t)
+
+= |x|, or full-sentence translation; and ② q( t) = 0, where q( t) is an “oracle” that does not rely on any source information.
+It should be that, in any case, 0 ≤ q( t) ≤ |x| for all t. Policies of this type are simple and easy to implement.
+However, they do not dynamically consider suitable contextual information and usually result in a decrease in translation accuracy.
+Adaptive policies learn to conduct source text segmentation according to dynamic contextual information.
+Such policies either use a specific model to chunk the streaming source text [85–89] or jointly learn segmentation and translation in an end-to-end framework [90,91].
+Adaptive methods are more flexible than fixed ones, and achieve state-of-the-art translation results.
+Inspired by the chunking strategy used by human interpreters, Zhang et al.
+[92] proposed a novel method to detect meaningful units for ST.
+The streaming source text is dynamically split into segments that can be translated independently, ensuring the generation of a high-quality translation with low latency.
+Incremental TTS, however, is a much less studied problem.
+Current state-of-the-art TTS systems generate speech after obtaining all the words in the texts, which results in high latency.
+In order to reduce latency, it is necessary to generate the speech incrementally.
+Conventional methods of incremental TTS
+
+are based on the Hidden Markov Model [93–97].
+These models require full context labels of linguistic features, and each component is trained and tuned separately.
+Recent research has leveraged the strength of neural networks [98,99].
+Yanagita et al.
+[98] proposed a segment-based TTS that synthesizes a segment at a time.
+Ma et al.
+[99] proposed a neural incremental word-level TTS.
+As shown in Fig.
+3, this idea is based on two observations: ① The dependencies are very local; and ② audio playing is inherently sequential in nature, and can be done simultaneously with audio generation—that is, a segment of audio can be played while the subsequent text is being generated.
+To summarize, this method starts to generate a spectrogram for the first word after receiving the first two words; this spectrogram is fed into the vocoder to generate the waveform for the first word, which is also played immediately.
+It is easy to implement a cascaded framework for ST.
+However, this framework suffers from several problems.
+For example, due to the simultaneity requirement, each of the three components should be simultaneous (streaming or incremental processing).
+Furthermore, the errors of each component propagate down the pipeline.
+A one-word error in the ASR system may make the translation result unacceptable.
+Thus, there is a need to develop more robust speech translation systems.
+The ultimate goal is to develop end-to-end ST technologies, so that the source language speech can be translated simultaneously into the target language without passing through intermediate stages, as in cascaded methods.
+This idea could not only reduce error propagation in the current pipeline, but also improve the efficiency of the system.
+However, it is extremely challenging to achieve both end-to-end translation and simultaneity together.
+Furthermore, the training data for an end-to-end ST model is very scarce.
+The available training data contains only hundreds of hours of speeches, most of which are for Japanese–English translation [100,101] and European languages [102,103].
+For Chinese–English translation, Baidu has released an open dataset containing 70 hours of speeches, including both the corresponding transcriptions and translations [104].
+From the perspective of methodology, integrating speech recognition and translation into a unified framework is not trivial.
+End-to-end ST is a cutting-edge technology.
+Bansal et al.
+[105] provides the first proof that end-to-end speech translation can be implemented without using any source transcriptions.
+Studies resort to pretraining or multitask learning to improve translation quality.
+Such studies either applied a pretrained encoder trained on ASR data [105], or leveraged the text translation to improve the speech translation
+
+[106–108].
+Liu et al.
+[109] uses a knowledge distillation method to improve the end-to-end ST model by transferring the knowledge from the MT model.
+However, different tasks in these methods cannot share information with each other.
+To alleviate this problem, several studies proposed two-stage models [110–
+
+112], in which the decoder in the first stage performs recognition and generates a hidden state with which the second decoder conducts translation.
+Liu et al.
+[113] proposed an interactive end-to-end ST model that can conduct speech recognition and MT interactively, enhancing the performance on both tasks.
+Recent studies also tackle the issue of direct S2S translation [114,115].
+However, due to the limited training data and the complexity of integrating speech recognition and MT into a uniform framework, the performance of current end-to-end ST methods does not yet meet the practical requirements.
+At present, most practical ST systems use cascaded methods because they can be easily deployed and can generate high-quality translations.
+Xiong et al.
+[104] reported a comparison between a pipeline ST
+
+system and human interpreters with experience ranging from three to seven years.
+They found that the human interpreters usually skipped unimportant information to maintain a reasonable ear-voice span, which could result in a loss of adequacy but provided a shorter lag time, while the ST system produced more adequate translations.
+Shimizu et al.
+[100] shows that interpreters with less experience lose details during interpreting.
+These studies show that simultaneous interpreting remains a difficult task for both human interpreters and MT systems.
+3.
+Applications of MT
+
+MT is already widely used in many areas due to its low cost, high efficiency, and high translation quality.
+In China, typical human translation costs from 0.1 to 0.5 CNY per character, depending on the translator’s proficiency, whereas MT systems cost about 0.00005 CNY per character.
+Fig.
+4 shows the translation distribution among the top eight domains in Baidu Translate, which supports translations between any pair among over 200 languages and supports translating queries with over 100 billion characters per day.
+Fig.
+4.
+Translation distribution of Baidu Translate.
+3.1.
+Text translation
+
+Text translation is the most common form of MT application.
+Below are some typical applications of text translation.
+(1) Webpage translation.
+With the rapid progress of globalization, there is an increasing need for quick acquisition of information in foreign languages.
+While it is expensive and time-consuming to hire human translators to translate a huge number of webpages, MT provides a convenient way to view webpages in foreign languages.
+Users just need to copy/paste the content of the webpage or input the uniform resource locator (URL to read the pages in their own language.
+(2) Scientific literature translation.
+Users such as researchers, engineers, and graduate students often use MT to read scientific literature such as papers and patents in their own language, or to translate their work into other languages.
+For example, translation in the domain of bio-medicine is growing rapidly in order to combat corona virus disease 2019 (COVID-19).
+Scientific literature usually contains many terminologies.
+With domain adaptation technologies, a translation model can first be pretrained with a large training corpus, and then fine-tuned on a small amount of in-domain data for further improvement.
+In addition, formatted document translation is used to translate various kinds of documents, such as PowerPoint, Excel, Word, and portable document format (PDF), while keeping format information such as font size and font color.
+(3) E-commerce translation.
+MT is widely used in transnational online trade.
+With the help of MT, sellers can effectively translate their website, product information, and manuals into foreign languages, while buyers can easily buy products from all over the world.
+MT is also used in customer services to improve service quality and efficiency.
+(4) Language learning.
+Current MT systems usually provide rich functions, including translation, high-quality dictionaries, sentence pair examples, and so forth.
+Users can thus conveniently determine the meaning of a word or phrase and learn how to use it.
+Student users often input a whole paragraph for comprehension reading and use the sentence pair examples to help in their writing.
+In addition to text translation, image translation and speech translation have been widely used in real applications based on recent advances in artificial intelligence techniques.
+3.2.
+Image translation
+
+Image translation combines computer vision and MT, as it takes images as input and then translates them into the target languages.
+(1) Multilingual image captioning.
+This type of MT, which describes the content of pictures and performs visual question answering, has been widely studied in recent years [116–118].
+Multilingual image translation borrows the idea of NMT, where the input of the encoder is an image and the output of the decoder is text.
+Since the model can generate different languages for the same picture, this function is very helpful for language studies.
+(2) Optical character recognition translation.
+This form of MT first recognizes the characters in a picture and then performs translation and renders it to replace the original source text.
+This function is useful for translating menus, street nameplates, product descriptions, and so forth, when traveling to foreign countries.
+With recent studies on jointly modeling the text and layout information of document images [119], MT can also be used to translate scanned documents while keeping the original format information.
+3.3.
+Speech translation
+
+Speech translation combines speech processing and MT; it takes voice in the source language as its input and generates text or voice in the target language as its output.
+(1) Simultaneous translation.
+As mentioned in Section 2.3, great progress has recently been made in ST, enabling many kinds of products to provide ST services.
+Speech-to-text (S2T) translation projects both the ASR output and the translation scripts onto a single screen for the users’ convenience.
+However, the limited space on a screen usually only makes it possible to display the scripts of one language pair.
+Thus, it is difficult to extend S2T to multiple languages.
+S2S translation solves this problem by allowing the audience to listen to the target voice via their cell phones.
+Thus, users from different countries can choose to listen to their mother language or to whatever other language they prefer.
+ST systems are currently widely used in international conferences.
+Due to the COVID-19 pandemic, many more conferences are being held virtually—that is online.
+ST has been integrated into online meeting systems to provide real-time translation.
+In addition, users can use ST plugins to watch foreign videos, such as films and lectures, in their own language.
+(2) Portable translation devices.
+These devices are capable of voice translation and have been widely favored by users in recent years.
+They are easy to carry and use in many scenarios, including language learning, overseas traveling, and business negotiation.
+MT can also be used for poem generation [120] and Chinese couplet generation.
+Taking the former generated line as the “source” and the subsequent line as the “target,” MT models can generate poems in a line-by-line manner.
+4.
+Challenges and future directions
+
+Although great progress has been achieved in MT, there is always room for improvement.
+At meetings such as Workshop on Statistical Machine Translation, it is sometimes suggested that machines are better than human translators.
+Certain metrics (i.e., BLEU, word error rate (WER), metric for evaluation of translation with explicit ordering (METEOR)) [121–123] and benchmarks may suggest that this is the case, but such metrics may not be measuring what is important.
+A good translation should have at least two characteristics: adequacy and fluency.
+Nowadays, NMT methods can produce translations for some language pairs and domains with very high adequacy and fluency in particular text translation scenarios; however, such methods are far from perfect, especially in ST scenarios.
+Many aspects remain to be improved.
+First, new evaluation metrics are needed to evaluate what really matters.
+For example, human interpreters do not attempt to translate everything when performing simultaneous interpreting.
+It is important to know what needs to be said and when it needs to be said.
+Human interpreters know when they need to speed up and when they can take their time.
+They know what needs to be emphasized and what can be omitted.
+However, MT systems translate everything and do not know how to omit unimportant parts to reduce latency.
+Furthermore, emphasis is important in translation; a translation should reflect the emphasis that is present in the source.
+Recently, studies have investigated the use of acoustic clues to identify emphasis and translate it into the target language [124–126].
+Besides speech information, the speaker’s body language (and prosody) make it clear when the speaker is emphasizing a particular point (as opposed to a different point); nevertheless, it is difficult to synchronize the translation with the speaker’s body language.
+Speakers often make references to slides; but again, it is difficult to synchronize a translation with reference to slides.
+Although metrics such as BLEU and WER reward completeness, many other aspects contribute to a good translation: latency, emphasis, synchronization, comprehension, 11
+and so forth.
+None of these metrics reward these aspects.
+The front-end ASR system should capture not only words, but also emphasis that would have consequences for downstream steps including translation and speech synthesis.
+Metrics need to be developed that can reward systems that emphasize what needs to be emphasized, while penalizing systems that translate trivial parts that should not be translated.
+Second, the robustness of MT needs further improvement.
+Sometimes, a slight change in the source sentence—such as a word or punctuation mark—can lead to great changes in the translation.
+However, human beings have a strong error-tolerant ability that allows them to flexibly deal with various non-standard language phenomena and errors, and sometimes even unconsciously correct them.
+Robust MT
+
+systems are crucial in real applications.
+Developing explainable MT methods may be one possible solution.
+Third, NMT methods are facing serious data sparseness problems in resource-poor language pairs and domains.
+The current MT systems often use tens of millions or even hundreds of millions of sentence pairs of data for training.
+Otherwise, the translation quality will be poor.
+However, human beings can learn from only a small number of samples.
+Although many data-augmentation methods, multitask learning methods, and pretraining methods have been proposed to alleviate this problem, the question of how to improve the translation quality for resource-poor language pairs remains open.
+In summary, there is still a long way to go to achieve high-quality MT.
+It is necessary to develop new methods that can combine symbolic rules, knowledge, and neural networks to further improve translation quality.
+Fortunately, the use of MT in real applications continues to provide more data, promoting the quick development of new MT methods.

@@ -17,9 +17,9 @@ train_file_tfidf = params.train_file_tfidf
 test_file_tfidf = params.test_file_tfidf
 train_file_pointwise = params.train_file_pointwise
 test_file_pointwise = params.test_file_pointwise
-filtered_data = params.extracted_terms
-filtered_data_tfidf=params.extracted_terms_tfidf
-filtered_data_pointwise=params.extracted_terms_pointwise
+filtered_data = params.extracted_terms_analysed
+filtered_data_tfidf=params.extracted_terms_tfidf_analysed
+filtered_data_pointwise=params.extracted_terms_pointwise_analysed
 nlp = spacy.load('en_core_web_sm')
 
 
@@ -40,6 +40,12 @@ def read_file(filepath):
     return sent_tokenize(data)
 
 def main(type_filter="tfidf"):
+
+    """
+    file that created silver annotated data calling rule based method
+
+    """
+    
     num = 0 
     files = _find_files(raw_corpus, pattern="*.txt")
     total_docid = []
@@ -91,11 +97,9 @@ def main(type_filter="tfidf"):
     print(num)
             
             
+if __name__=="__main__":
 
 
-
-
-
-main()
-main("pointwise")
-main("normal")
+    main()
+    main("pointwise")
+    main("normal")

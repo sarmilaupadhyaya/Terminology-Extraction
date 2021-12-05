@@ -72,8 +72,10 @@ class Dataloader:
         y_idx = [[self.tag2idx[w[1]] for w in s] for s in self.sentences]
         y = pad_sequences(maxlen=self.maxlen, sequences=y_idx, padding="post", value=self.tag2idx["O"])
         y = [to_categorical(i, num_classes=self.n_tags) for i in y]
-        self.y = y
-
+        X= X + X[:(self.batch_size-(len(X)%self.batch_size))]
+        y = y + y[:(self.batch_size-(len(X)%self.batch_size))]
+        self.X=X
+        self.y=y
         return Generator(np.array(X), np.array(y), self.batch_size)
 
 

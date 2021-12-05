@@ -1,0 +1,445 @@
+Machine Translation
+machine translation
+translation quality
+neural machine translation
+machine translation
+rule-based machine translation
+example-based machine translation
+statistical machine translation
+Transformer
+multilingual translation models
+data sparseness problem
+cutting-edge simultaneous translation methods
+translation quality
+machine translation
+machine translation
+natural language processing
+approaches to MT
+rule-based methods
+corpus-based methods
+rule-based methods
+Rule-based machine translation ( RBMT ) methods
+bilingual dictionaries
+manually written rules
+to translate
+source language
+target language
+rules
+rules
+domain
+one language
+rule-based systems
+open-domain translation
+multilingual translation
+MT systems
+Russian–English MT experiment
+Automatic Language Processing
+MT research
+for Computational Linguistics
+Machine Translation
+and Computational Linguistics
+ALPAC report
+MT researchers
+translation quality
+NLP researchers
+Computational Linguistics
+rule-based parsing
+RBMT methods
+translation system
+rule-based system
+bilingual corpora
+corpus-based methods
+corpus-based MT methods
+example-based machine translation
+statistical machine translation
+neural machine translation
+source texts
+sentence pairs
+bilingual corpus
+translation results
+sentence pairs
+bilingual corpora
+linguistic phenomena
+language pairs
+EBMT methods
+computer-aided translation systems
+translation knowledge
+SMT models
+SMT methods
+statistical methods
+Empirical Methods in Natural Language Processing
+corpus-based methods
+IBM models
+SMT toolkit
+word-based SMT
+phrase-based SMT methods
+translation quality
+phrase-based SMT methods
+open-source systems
+SMT systems
+SMT methods
+internet translation service
+phrase-based SMT methods
+translation services
+MT models
+SMT models
+SMT methods
+SMT methods
+translation quality
+log-linear models
+translation model
+language model
+reordering model
+reordering problem
+distant language pairs
+deep
+learning technology
+deep
+learning
+technology
+end-to-end neural network translation
+neural machine translation.
+source language
+attention mechanism
+multilingual translation framework
+multilingual translation
+Baidu
+large-scale NMT system
+NMT system
+NMT systems
+SMT systems
+sequence-to-sequence translation model
+Transformer model
+translation quality
+human translation
+non-autoregressive models
+unsupervised NMT models
+pretraining models
+multilingual translation quality
+translation efficiency
+simultaneous translation
+spoken language translation
+speech translation
+speech-to-speech ( S2S ) translation system
+speech translation
+speech translation systems
+vocabulary-limited systems
+open-domain spontaneous translations
+Spoken Language Translation
+speech translation systems
+translation system
+source-language
+human interpreters
+simultaneous MT techniques
+human interpreters
+neural network-based method
+speech translation quality
+“ prefix-to-prefix ”
+Automatic ST
+Neural machine translation
+NMT model
+encoder network
+source sentence
+decoder network
+NMT model
+source sentence
+target sentence
+translation knowledge
+training corpora
+MT community
+NMT models
+state-of-the-art NMT
+Transformer
+multilingual translation
+backtranslation
+pivot-based translation
+NMT model
+NMT model
+source sentence
+encoder RNN
+hidden state
+source token
+model parameters
+basic model
+hidden state
+source sentence
+sentence ,
+translation probability
+target word
+target words
+translation quality
+target word
+source sentence
+attention mechanism
+target token
+source words
+source word
+target word
+alignment model
+attention mechanism
+word alignment
+Word alignment
+hard alignment
+source word
+target word
+attention mechanism
+soft alignment
+target word
+source words
+attention mechanism
+translation quality
+Bidirectional encoding
+unidirectional encoder
+bidirectional encoder
+bidirectional encoder
+source sentence
+translation quality
+gradient vanishing problem
+NMT models
+out-of-vocabulary ( OOV ) problem
+under-translation
+decoding speed
+alignment agreement
+phrase tables
+translation recommendations
+fixed-size vocabulary
+OOV words
+rare words
+RNN-based NMT
+long-distance dependencies
+Transformer
+attention mechanisms
+attention
+multihead attention mechanism
+attention spaces
+parameter matrices
+translation quality
+translation improvement
+knowledge distillation
+imitation learning
+curriculum learning
+Multilingual translation
+translation among
+subject-object-verb languages
+long-distance reordering
+multilingual MT
+Data-driven MT
+translation knowledge
+parallel data
+training data
+translation quality
+training words
+English–Spanish translation
+translation quality
+bilingual evaluation
+BLEU
+NMT system
+data sparseness problem
+sentence pairs
+multilingual translation
+translation model
+translation models
+NMT models
+multilingual translation
+of data
+models
+multilingual translation
+resource-poor languages
+parallel corpus
+monolingual corpus
+monolingual corpus
+training data augmentation
+back-translation
+standard NMT model
+parallel corpus
+monolingual data
+target languages
+into
+bilingual corpus
+translation model
+parallel corpus
+unsupervised translation methods
+translation systems
+target monolingual corpora
+SMT model
+unsupervised NMT model
+translation quality
+unsupervised NMT model
+resource-rich languages
+resource-poor languages
+pivot-based translation
+high-resource language
+pivot language
+low-resource language pairs
+Chinese–German translation system
+pivot-based translation method
+cascaded translation systems
+source–pivot translation system
+source sentence
+pivot–target translation system
+pivot sentence
+target sentence
+phrase-level translation knowledge
+source–target translation model
+source–pivot
+pivot–target translation models
+NMT methods
+translation quality
+resource-poor languages
+MT methods
+translation models
+language pair
+multilingual NMT
+source representations
+source language
+language pairs
+source language
+target languages
+translation systems
+NMT model
+decoder
+encoders
+decoders
+multilingual translation
+source sentence
+target language
+hybrid translation method
+translation efficiency
+multilingual MT
+sentence pairs
+M2M-100 model
+sentence pairs
+Simultaneous translation
+real-time translation
+source language speech
+translation output
+full-sentence translation
+target word
+source sentence
+source sentence
+Simultaneous S2S translation
+cascaded ST system
+source text
+target text
+target–language speech
+TTS system
+translation quality
+translation quality
+source words
+source text
+source sentence
+source words
+target word
+source words
+target word
+source sentence
+source words
+full-sentence translation
+source information
+translation accuracy
+source text segmentation
+source text
+state-of-the-art translation
+source text
+high-quality translation
+words
+texts
+linguistic features
+speech translation systems
+end-to-end ST technologies
+source language speech
+target language
+cascaded methods
+end-to-end translation
+training data
+end-to-end ST model
+training data
+Japanese–English translation
+Chinese–English translation
+speech recognition
+translation
+End-to-end ST
+end-to-end speech translation
+multitask learning
+translation quality
+text translation
+speech translation
+two-stage models
+end-to-end ST model
+S2S translation
+training data
+end-to-end ST methods
+cascaded methods
+high-quality translations
+ST system
+adequate translations
+human interpreters
+MT systems
+translation quality
+human translation
+translator ’ s proficiency
+MT systems
+translation distribution
+translating queries
+Translation distribution
+Text translation
+Text translation
+MT application
+text translation
+human translators
+translation model
+document translation
+translate
+MT systems
+sentence pair examples
+sentence pair
+image translation
+speech translation
+Image translation
+Image translation
+target languages
+Multilingual image translation
+Optical character recognition translation
+Speech translation
+Speech translation
+source language
+target language
+Simultaneous translation
+Speech-to-text ( S2T ) translation
+translation scripts
+language pair
+S2S translation
+real-time translation
+Portable translation
+voice translation
+MT models
+Statistical Machine Translation
+human translators
+BLEU
+word error rate
+evaluation
+METEOR
+NMT methods
+language pairs
+text translation
+evaluation metrics
+human interpreters
+Human interpreters
+target language
+BLEU
+WER
+source sentence
+Robust MT systems
+MT methods
+NMT methods
+data sparseness problems
+resource-poor language pairs
+sentence pairs
+translation quality
+data-augmentation methods
+pretraining methods
+translation quality
+resource-poor language pairs
+high-quality MT
+translation quality
+MT methods

@@ -1,0 +1,371 @@
+Machine Translation
+machine translation
+translation quality
+neural machine translation
+machine translation
+rule-based machine translation
+machine translation
+statistical
+machine translation
+multilingual translation models
+simultaneous translation methods
+translation quality
+machine translation
+future research
+machine translation
+natural language processing
+rule-based methods
+machine translation
+bilingual dictionaries
+language texts
+language texts
+open-domain translation
+multilingual translation
+of the
+for the
+but the boom
+became extremely
+the Association
+( ACL
+its name
+1970s , RBMT
+a commercially
+the availability
+methods became
+There
+are three
+:
+translation (
+, and neural
+( NMT
+, EBMT
+similar sentence pairs
+of high
+However ,
+can not cover
+. In
+the idea
+widely adopted
+of SMT
+released [ 10
+were widely
+translation
+performance .
+models ,
+Although the
+language model
+problem for distant
+and other
+MT . In
+. [
+by using
+large-scale NMT
+22 ]
+only took
+is as
+as human
+various methods
+and pretraining
+great improvements
+system that
+in 1983
+was developed
+32 ]
+in 2004
+, new
+translation system
+the source-language
+as it
+, there
+places
+every 15–30
+is a
+interpreters and
+target side .
+This technique
+( i.e.
+conferences . This
+and a
+An encoder
+the source
+” the whole
+Compared with
+directly learns
+cascaded model
+MT ,
+speech recognition
+model A
+is built
+or its alternative
+source sentence
+is the
+the network
+, respectively
+model ,
+takes the
+𝑦 =
+, 𝑦2
+probability ,
+c is
+hidden states
+during transmission
+; thus
+issue ,
+are described
+word ,
+hidden state
+source sentence
+attention mechanism
+strong the association
+is computed
+” which
+source word
+word have
+Instead of
+methods employ
+improves the
+gated recurrent
+46 ]
+but is much
+. Preliminary
+overcome these
+] proposed
+and incorporated
+for addressing the
+weakness of
+of parallelization
+during training
+by the
+. [
+. There
+self-attention ,
+of attention
+√𝑑 is
+transpose of
+key vector
+compute a
+attention mechanism
+≤ 𝑚
+≤ 𝑀
+, head𝑀
+each output
+. This
+decoding .
+[ 25
+which can
+𝑇 is
+𝑝𝐿 (
+𝜙 )
+models ,
+must first
+, imitation learning
+, Chinese
+Japanese and Korean
+When performing
+changes ,
+to learn
+showed that
+translation quality
+% (
+. Unfortunately ,
+thus referred
+due to
+. According
+German )
+number of
+Chinese users
+% ,
+users only
+English ,
+. In
+, it
+necessary to
+for each
+English-to-Chinese are
+success of
+been seeking new
+are two
+methods that
+. Since
+is back-translation
+small parallel
+corpus ,
+to translate
+monolingual data
+the target
+the other
+can be used
+the translation
+parallel corpus
+in different
+by reconstructing
+to initialize
+Song et
+[ 29 ]
+69 ]
+an unsupervised NMT
+the pretraining
+build a
+For example
+translation system
+method is
+] :
+system ,
+system suffers
+a triangulation
+model from
+improve the translation
+NMT makes
+a universal model
+the number
+for multilingual
+shows ,
+representations with
+, the
+the source
+pairs . This
+. To
+. Zoph
+shares the
+[ 79
+encoder–decoder model to
+change is made
+. Considering
+al . [
+and train
+above methods
+among hundreds
+parameters on
+25 billion
+on 7.5
+𝑦𝑡 is
+on ST
+. 2.3.1 .
+boundaries , while
+boundaries as
+a gap
+of ASR
+content has
+the ASR
+system :
+. Fixed
+follow a
+. This
+after the
+first three
+word
+) }
+: 𝑝
+q (
+should be
+) ≤ |x|
+for all
+, they
+and usually
+to dynamic
+and translation
+. Adaptive
+translation results
+a novel
+for ST
+, is
+to reduce latency
+the speech
+the Hidden
+is trained
+. Recent
+al .
+in nature
+generated .
+the first
+the waveform for
+is also
+streaming or
+one-word error
+the system
+very scarce .
+contains only hundreds
+containing 70
+ST is
+source transcriptions
+pretraining or
+105 ]
+speech translation
+improve the
+tasks in
+, several studies
+which the
+. [
+studies also
+translation [
+However ,
+framework ,
+methods does
+between a
+with experience ranging
+ear-voice span
+adequate translations
+100 ]
+simultaneous interpreting
+. In
+, depending
+the translator
+character .
+the translation
+and supports
+100 billion
+form of
+are some typical
+foreign languages
+to translate
+webpages , MT
+the uniform resource
+researchers ,
+For example
+domain of
+bio-medicine is
+rapidly in
+COVID-19 )
+adaptation technologies
+pretrained with
+fine-tuned on
+kinds of
+Excel ,
+is widely
+MT ,
+languages ,
+customer services
+quality and
+systems usually
+word or
+pair examples
+. In
+translation and
+translation combines
+them into
+( 1 )
+of pictures
+borrows the
+Since the model
+function is
+useful for
+recent studies
+[ 119
+combines speech processing
+its input
+been made
+via their
+, in
+, ”
+manner .
+is always
+benchmarks may suggest
+good translation
+and fluency
+produce translations
+improved .
+, new evaluation
+and when
+be said
+can take
+They know
