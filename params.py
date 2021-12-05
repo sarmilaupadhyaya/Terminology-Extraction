@@ -3,8 +3,8 @@ max_len=150
 word_emb_size=1024
 checkpoint_path="output/chkpt/markable-bi-lstm-td-model.hdf5"
 tag2id_path="output/tag2idx.pk"
-checkpoint_path_tfidf="output/chkpt/markable-bi-lstm-td-model-tfidf.hdf5"
-tag2id_path_tfidf="output/tag2idx_tdidf.pk"
+checkpoint_path_tfidf="output/chkpt/markable-bi-lstm-td-model_tfidf.hdf5"
+tag2id_path_tfidf="output/tag2idx_tfidf.pk"
 
 
 

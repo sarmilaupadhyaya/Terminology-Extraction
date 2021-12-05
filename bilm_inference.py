@@ -35,8 +35,6 @@ def main(dframe, filter_type):
     model.load_weights(chkpt) 
     p = model.predict_generator(dl) 
     total_tags = []
-    import pdb
-    pdb.set_trace()
     for i, (pred, sentence) in enumerate(zip(p[:actual],dl.x[:actual])):
         gt = np.argmax(p[i], axis=-1)
         for idx, (ep,word) in enumerate(zip(gt,sentence)):

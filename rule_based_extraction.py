@@ -82,13 +82,13 @@ def rule_based_inference(sentence, nlp, matcher):
 
 def main(test_sentences, nlp, filtered_file):
     #nlp = spacy.load('en_core_web_sm')
-
     filtered = get_search_keys(filtered_file, nlp)
     matcher = initialize_matcher(nlp, filtered)
     term_locs = []
     for i, sentence in enumerate(test_sentences):
         term_loc = rule_based_inference(sentence, nlp, matcher)
         term_locs.append(term_loc)
+    assert len(term_locs) == len(test_sentences)
     return term_locs
 
 def inference_gold(filter_method, sentences):

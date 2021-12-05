@@ -1,0 +1,411 @@
+Machine Translation
+machine translation
+translation quality
+neural machine translation
+machine translation
+rule-based machine translation
+machine translation and
+statistical
+machine
+translation .
+multilingual translation models
+simultaneous translation
+translation quality
+machine translation
+future research directions
+machine translation
+numerical integrator
+natural language processing
+Rule-based machine translation
+source
+language texts
+open-domain translation
+multilingual translation
+International Business Machines
+Automatic Language Processing
+Machine Translation
+translation quality
+RBMT methods
+commercial
+translation system
+bilingual corpora
+machine translation
+machine translation
+neural
+machine translation
+source texts
+similar sentence pairs
+similar sentence pairs
+bilingual corpora
+language pairs
+computer-aided
+translation systems
+translation knowledge
+human experts
+different SMT models
+Natural Language Processing
+IBM models
+translation quality
+internet
+translation service
+translation services
+various translation requests
+translation performance
+translation quality
+translation model
+language model
+distant language pairs
+deep learning technology
+end-to-end neural network
+translation models and
+neural machine translation.
+source language
+attention mechanism
+multilingual translation framework
+multilingual translation
+NMT systems
+SMT systems
+online service
+convolutional sequence-to-sequence
+translation model
+translation quality
+human translation
+non-autoregressive models
+unsupervised NMT models
+pretraining models
+multilingual translation quality
+translation efficiency
+simultaneous translation
+language translation
+speech translation
+translation system
+Speech Translation
+translation systems
+Language Translation
+translation systems
+neural speech
+translation system
+simultaneous interpreters
+error rate
+human interpreters
+source content
+human interpreters
+early work
+speech
+translation quality
+target side
+controllable latency
+commercial products
+Neural machine translation
+source sentence
+whole source sentence
+target sentence
+translation knowledge
+training corpora
+NMT models
+recurrent neural network
+multilingual translation
+universal models
+NMT model
+source sentence
+hidden state
+time step
+model parameters
+last hidden state
+source sentence
+target sentence
+target word
+target words
+translation quality
+NMT models
+attention mechanism
+target word
+last hidden state
+source sentence
+attention mechanism
+source words
+hidden state
+source word
+target word
+neural network
+attention mechanism
+source word
+target word
+attention mechanism
+target word
+source words
+attention mechanism
+translation quality
+hidden states
+source sentence
+translation quality
+simple activation
+short-term memory
+early NMT models
+phrase table
+language model
+phrase tables
+translation recommendations
+word segmentation
+rare words
+other model
+parallelization capability
+current word
+Convolutional neural networks
+long-distance dependencies
+NMT methods
+novel network
+attention mechanisms
+decoder-masked attention
+dot-product method
+value vectors
+word embeddings
+multihead attention mechanism
+attention spaces
+pretraining models
+knowledge integration
+output word
+parallelization capability
+target sequences
+target sentence
+model parameters
+autoregressive models
+non-autoregressive models
+target sequence
+translation quality
+word dependency
+translation improvement
+non-autoregressive models
+imitation learning
+curriculum learning
+Multilingual translation
+human
+subject-verb-object languages
+rich word
+translation knowledge
+parallel data
+training data
+translation quality
+training words
+translation quality
+parallel data
+other language users
+sentence pairs
+resource-poor language pairs
+sentence pairs
+multilingual translation systems
+translation model
+translation directions
+translation models
+NMT models
+multilingual translation
+NMT models
+multilingual translation
+training data
+more training data
+parallel corpus
+monolingual corpus
+monolingual corpus
+training data
+small parallel corpus
+monolingual data
+target languages
+translation model
+no
+parallel corpus
+unsupervised translation methods
+translation systems
+unsupervised NMT model
+translation quality
+unsupervised NMT model
+resource-rich languages
+resource-poor languages
+pivot language
+low-resource language pairs
+Chinese–German
+translation system
+pivot language
+parallel data
+translation method
+translation systems
+translation system
+source sentence
+pivot sentence
+target sentence
+practical systems
+error propagation
+phrase-level translation knowledge
+translation model
+translation models
+translation quality
+separate translation models
+language pair
+multiple languages
+target side
+novel multitask
+learning method
+source language corpus
+different language pairs
+source language
+multiple target languages
+translation systems
+target side
+attention mechanism
+single encoder–decoder model
+multilingual translation
+source sentence
+target language
+NMT model
+group languages
+translation method
+translation efficiency
+current translation systems
+single model
+sentence pairs
+sentence pairs
+source language
+target word
+entire source sentence
+source sentence
+translation pipeline
+source speech
+source text
+target text
+different application
+high translation quality
+adequate source content
+translation quality
+many source words
+source segments
+source text
+source sentence
+human simultaneous interpreters
+target word
+source words
+target word
+source words
+target word
+source prefix
+whole source sentence
+source words
+arbitrary policies
+full-sentence translation
+source information
+suitable contextual information
+source text
+dynamic contextual
+source text
+state-of-the-art translation results
+human interpreters
+meaningful units
+source text
+Hidden Markov
+context labels
+linguistic features
+neural networks
+neural incremental word-level
+subsequent text
+incremental processing
+one-word error
+robust speech
+translation systems .
+source language
+target language
+error propagation
+end-to-end translation
+training data
+training data
+European languages
+Chinese–English translation
+end-to-end speech translation
+source transcriptions
+translation quality
+ASR data
+speech translation
+different tasks
+hidden state
+direct S2S
+limited training data
+high-quality translations
+human interpreters
+human interpreters
+human interpreters
+high translation quality
+typical human translation
+translation distribution
+Translation distribution
+foreign languages
+human translators
+foreign languages
+uniform resource
+Scientific literature translation
+other languages
+domain adaptation
+translation model
+large training corpus
+in-domain data
+document translation
+font size
+transnational online
+foreign languages
+customer services
+service quality
+Language learning
+sentence pair
+sentence pair
+image translation
+speech translation
+artificial intelligence
+target languages
+Multilingual image
+visual question
+Multilingual image translation
+different languages
+language studies
+Optical character recognition
+original source text
+layout information
+source language
+target language
+Simultaneous translation
+translation scripts
+language pair
+multiple languages
+target voice
+mother language
+online meeting systems
+real-time translation
+translation devices
+voice translation
+language learning
+poem generation
+subsequent line
+future directions
+Statistical Machine Translation
+error rate
+good translation
+some
+language pairs
+new evaluation
+human interpreters
+Human interpreters
+unimportant parts
+target language
+speech information
+body language
+body language
+downstream steps
+trivial parts
+source sentence
+human beings
+various non-standard language
+resource-poor language pairs
+sentence pairs
+translation quality
+human beings
+translation quality
+resource-poor language pairs
+symbolic rules
+neural networks
+translation quality
+more data

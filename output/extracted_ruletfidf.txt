@@ -1,0 +1,204 @@
+Machine Translation
+machine translation
+translation quality
+neural machine translation
+machine translation
+to example-based
+machine translation
+multilingual translation models
+and latency
+machine translation
+machine translation
+natural language processing
+( RBMT
+and manually
+texts into
+texts .
+Machine Translation
+translation quality
+commercial translation system
+) ,
+SMT ) ,
+NMT ) .
+similar sentence pairs
+similar sentence pairs
+language pairs
+.
+Processing conference—began in
+.
+single model
+translation performance
+translation quality
+, a
+, and
+pairs .
+and formally
+used the
+The basic idea
+semantic representation
+multilingual translation
+multilingual translation
+NMT systems
+] and
+.
+models [ 27,28
+quality and translation
+was developed
+translation systems
+translation systems
+translation system
+neural network-based
+.
+Neural machine translation
+source sentence
+whole source sentence
+target sentence
+NMT models
+basic recurrent neural network
+multilingual translation
+source sentence
+hidden states
+hidden state
+time step
+model parameters
+last hidden state
+source sentence
+target sentence
+hidden states
+target word
+target words
+translation quality
+NMT models
+attention mechanism
+target word
+last hidden state
+source sentence
+attention mechanism
+source words
+hidden state
+source word
+target word
+, 𝑖
+attention mechanism
+source word
+target word
+attention mechanism
+target word
+source words
+attention mechanism
+translation quality
+quality .
+early NMT models
+phrase table
+, and
+phrase tables
+open vocabularies
+rare words
+Convolutional neural networks
+attention mechanisms
+parameter metrics
+attention mechanism
+target sentence
+model parameters
+translation quality
+Multilingual translation
+training data
+improved translation quality
+improved by
+parallel data
+to train
+as Chinese–Hindi or
+multilingual translation systems
+translation model
+translation direction
+translation models
+NMT models
+multilingual translation
+NMT models
+multilingual translation
+, it
+data and make
+parallel corpus
+monolingual corpus
+monolingual corpus
+training data
+corpus , and
+( e.g.
+) into
+.
+parallel corpus
+translation systems
+monolingual corpora
+translation quality
+a bridge
+system , English
+, since
+[ 71,72
+translates the
+pivot sentence
+pivot sentence
+and pivot–target
+of resource-poor
+separate translation models
+language pair
+corpus across
+pairs .
+source language
+multiple target languages
+translation systems
+attention mechanism
+.
+source sentence
+target language
+current translation systems
+single model
+sentence pairs
+sentence pairs
+𝑦𝑡 is
+sentence 𝑥 .
+source sentence
+target text
+high translation quality
+translation quality
+many source words
+is ,
+first target word
+source words
+second target word
+source words
+target word
+whole source sentence
+processed by
+neural networks
+translation systems
+be translated
+through intermediate
+training data
+available training data
+translation quality
+which the
+limited training data
+high translation quality
+typical human translation
+to translate
+domain adaptation
+translation model
+large training corpus
+examples ,
+sentence pair
+target languages
+source language
+target language
+language pair
+Machine Translation
+human translators
+language pairs
+target language
+source sentence
+pairs and domains
+sentence pairs
+translation quality
+for resource-poor
+open .
+neural networks
+translation quality
