@@ -18,10 +18,8 @@ some from intro
 
 ## Directory structure
 
-    .
     ```
     
-    .
 ├── bilm_inference.py
 ├── bilm_train.py
 ├── data
@@ -74,8 +72,6 @@ some from intro
 ├── test.tsv
 ├── train.tsv
 └── utils.py
-
-8 directories, 78 files
     
     ```
 
