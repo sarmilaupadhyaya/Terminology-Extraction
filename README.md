@@ -20,32 +20,30 @@ some from intro
 
 ```
 	.
-	├── bilm_inference.py
-	├── bilm_train.py
-	├── data
-	│   ├── gold_annotation.csv
-	│   ├── silver_annotated
-	│   │   ├── test_tfidf.tsv
-	│   │   ├── test.tsv
-	│   │   ├── train_tfidf.tsv
-	│   │   └── train.tsv
-	├── dataloader.py
-	├── documents.py
-	├── extraction_terminology.py
-	├── gold_annotated.py
-	├── images
+	├── bilm_inference.py  #inference for pur Neural Network model
+	├── bilm_train.py     # training bilm model
+	├── data              # folder that contain all artikles and gold annotation
+	│   ├── gold_annotation.csv   # gold annotation with tags
+	│   ├── silver_annotated     # folder with silver annotated data
+	│   │   ├── test_tfidf.tsv   # tfidf train
+	│   │   ├── test.tsv         # frequency test
+	│   │   ├── train_tfidf.tsv  # tfidf test
+	│   │   └── train.tsv        # frequency train
+	├── dataloader.py            # dataloader got neural net model
+	├── documents.py             # class for documents
+	├── extraction_terminology.py # extracting candidate and filtering
+	├── gold_annotated.py         # 
+	├── images                   # architecture
 	│   ├── testing.png
 	│   └── training.png
-	├── inference
-	│   ├── clean_inference.txt
+	├── inference             # raw inference text
+	│   ├── clean_inference.txt # clean inference
 	│   ├── clean.py
 	│   ├── g.py
 	│   └── inference.txt
-	├── models
-	│   ├── bert-crf.py
+	├── models   # model for Neural Net
 	│   ├── bilstm_crf.py
-	│   └── rule_based_extraction.py
-	├── output
+	├── output # contains checkpoint and extracted terms from different method
 	│   ├── chkpt
 	│   │   ├── markable-bi-lstm-td-model-2.hdf5
 	│   │   ├── markable-bi-lstm-td-model.hdf5
@@ -63,15 +61,13 @@ some from intro
 	│   ├── incorrect_sentence_tfidf.txt
 	│   ├── tag2idx.pk
 	│   └── tag2idx_tdidf.pk
-	├── params.py
+	├── params.py # all parameters
 	├── README.md
-	├── rule_based_extraction.py
-	├── run_train.sh
-	├── silver_annotated.py
-	├── term_extraction.py
-	├── test.tsv
-	├── train.tsv
-	└── utils.py
+	├── rule_based_extraction.py  # rule based extraction
+	├── run_train.sh  # script to train NN model
+	├── silver_annotated.py  # script to extract silver annotated train test data
+	├── term_extraction.py  # main extraction file for gold annotation
+	└── utils.py # contains function to get iob from terms and terms from iob data
 
     
  ```
