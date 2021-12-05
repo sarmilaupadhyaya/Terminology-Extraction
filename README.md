@@ -1,6 +1,8 @@
 # Software Project by team CODE SLINGERS for the Language Generation Task course at Saarland University.
 
-![architecture](https://github.com/IuliiaZaitova/code_slingers/blob/master/images/example-2.png?raw=true)
+![architecture](https://github.com/sarmilaupadhyaya/Terminology-Extraction/blob/main/images/training.png)
+
+![architecture testing](https://github.com/sarmilaupadhyaya/Terminology-Extraction/blob/main/images/testing.png)
 
 some from intro
 
