@@ -76,12 +76,10 @@ some from intro
 ## Introduction
 
     
-![architecture](https://github.com/IuliiaZaitova/code_slingers/blob/master/images/New_Architecture_updated.png?raw=true)
-
+Many fields employ specialized vocabulary that are either not recognized outside of a given community of specialists, or have a somewhat different sense. The elements of these specialized vocabulary are known as terms. Term extraction is the task of identifying terms in a given document or corpus. This task can be performed in either a monolingual or multilingual setting, and can be a first step toward other tasks, such as topic modelling, automatic summarization, ontology construction, and machine translation.
 
 ## Installation
 
-Note: Since, the project has three models as the pipeline running serially, it requires some memory space and RAM. Make sure you have around 3 GB physical disk space, 4 GB RAM and enough space to install the requirements. 
 
 In order to get the model to run, follow these installation instructions.
 
@@ -173,43 +171,7 @@ _Optional_: If you're on Mac.
 
 ---
 
-### 7. Initial Downloads
 
-This is the step that downloades the checkpoint for the Neural Network model
-    
-    chmod +x initialization_script.sh
-    ./initialization_script.sh
-    
- On Windows:
- 
- If you did not choose to import Linux tools when installing Git for Windows, you have to use the Git Bash to run the initialization script. Either way, both Git Bash and Windows Command Prompt should be run as administrator.
-
-    chmod +x initialization_script.sh
-    sh initialization_script_windows.sh
-
-
-************************************************************************************************************************************
-**NOTE**: If you encounter the following error (mostly due to internet issue models are not downloaded properly and you can't unzip)
-
-
-    Archive:  models.zip
-      End-of-central-directory signature not found.  Either this file is not
-      a zipfile, or it constitutes one disk of a multi-part archive.  In the
-      latter case the central directory and zipfile comment will be found on
-      the last disk(s) of this archive.
-    unzip:  cannot find zipfile directory in one of models.zip or
-            models.zip.zip, and cannot find models.zip.ZIP, period.
-
-
-Then Kindly rerun the following code
-
-
-    wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1-bnWPP6-c42wVQMztHpcVquUGd1XGc-z' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1-bnWPP6-c42wVQMztHpcVquUGd1XGc-z"  -O models.zip && rm -rf /tmp/cookies.txt
-    unzip models.zip
-
-
-If not, then skip this section!
-************************************************************************************************************************************
 **_YAY!!_** Installation is done! Now you can jump to the execution part and run the web app.
 
 
@@ -217,7 +179,8 @@ If not, then skip this section!
 
 To run the inference on the gold dataset that is inside data/gold_annotation.csv, run the following code, being in the root directory.
 
-    python3 
+    python3 term_extraction.py --filter_method <tfidf or frequency> --gold_annotation_path <data/gold_annotation.csv>
+
 
 ---
 
@@ -225,9 +188,7 @@ To run the inference on the gold dataset that is inside data/gold_annotation.csv
 ## Dataset
 
 Dataset, all the articles used for training and rule based is inside data folder. The gold test article is inside inference/cleaned_inference.txt
-
-
-<!-- - Evaluation of dataset -->
+further read data instructions file to know more: ![Link](https://github.com/sarmilaupadhyaya/Terminology-Extraction/blob/main/data_instructions.txt)
 
 
 
