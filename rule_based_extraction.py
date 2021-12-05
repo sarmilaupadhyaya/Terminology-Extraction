@@ -7,15 +7,19 @@ from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import word_tokenize
 from nltk.corpus import wordnet as wn
 import spacy
+import pandas as pd
 from spacy.matcher import Matcher
 import nltk
 
 
 #get list of manually filtered terms
 def read_term_list(filename):
-    with open(filename, encoding="utf8") as f:
-        lines = f.readlines()
-        return [line.split(",")[1].strip("\n").lower() for line in lines]
+    df = pd.read_csv(filename)
+    terminologies = df[(df["Rasul"] == 1) & (df["Sharmila"] == 1)]["Terminology"].tolist()
+    return [terminology.lower() for terminology in terminologies]
+    #with open(filename, encoding="utf8") as f:
+    #    lines = f.readlines()
+    #    return [line.split(",")[1].strip("\n").lower() for line in lines]
 
 #convert list into spacy docs    
 def get_search_keys(filtered, nlp):
@@ -89,8 +93,7 @@ def main(test_sentences, nlp, filtered_file):
 
 def inference_gold(filter_method, sentences):
     
-    if filter_method == "tfidf":
-
+    
     nlp = spacy.load('en_core_web_sm')
     t = main(test_sentences, nlp, "output/merged_tfidf.csv")
     import utils

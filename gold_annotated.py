@@ -52,7 +52,7 @@ for sentence, token in zip(sentences, total_terms):
         total_senid.append(i)
         total_word.append(word)
         total_tag.append(tag)
-        i += 1
+    i += 1
 df["doc_id"] = pd.Series(total_docid)
 df["sen_id"] = pd.Series(total_senid)
 df["word"] = pd.Series(total_word)
