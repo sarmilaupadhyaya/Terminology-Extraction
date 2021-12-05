@@ -176,6 +176,7 @@ _Optional_: If you're on Mac.
 
 
 ## Execution
+ ** Note ** initial running may take a while as it has to download elmo model which takes a while.
 
 To run the inference on the gold dataset that is inside data/gold_annotation.csv, run the following code, being in the root directory.
 
