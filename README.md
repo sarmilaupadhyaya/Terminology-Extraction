@@ -1,4 +1,4 @@
-# Software Project by team CODE SLINGERS for the Language Generation Task course at Saarland University.
+# Terminology extraction project for Terminology and Ontology class 2021
 
 ![architecture](https://github.com/sarmilaupadhyaya/Terminology-Extraction/blob/main/images/training.png)
 
@@ -19,37 +19,65 @@ some from intro
 ## Directory structure
 
     .
-    ├── data     #pickle files for templates and object generations
-    │   ├── aux_verbs.pkl
-    │   ├── dobj_dict_classes.p
-    │   ├── one_slot.pkl
-    │   ├── pobj_dict_classes.p
-    │   ├── three_slots.pkl
-    │   ├── two_slots.pkl
-    │   ├── verb_transitivity.tsv
-    │   └── verb_trans.p
-    ├── documents    #general documents
-    │   └── code_slingers_presentation.pdf
-    ├── images      #images
-    │   └── architecture.png
-    ├── initialization_script.sh    #for initialization
-    ├── initialization_script_windows.sh
-    ├── README.md
-    ├── requirements.txt
-    └── src     #main python files
-        ├── grammar_parsing.py
-        ├── joke_generator.py
-        ├── main.py
-        ├── parsing.py
-        ├── question_generation.py
-        ├── static  #static file for the app
-        │   ├── css
-        │   │   └── main.css
-        │   └── img
-        │       └── saarland.png
-        ├── templates    # html 
-        │   └── upload_image.html
-        └── views.py    #main flask app file
+    ```
+    
+    .
+├── bilm_inference.py
+├── bilm_train.py
+├── data
+│   ├── gold_annotation.csv
+│   ├── silver_annotated
+│   │   ├── test_tfidf.tsv
+│   │   ├── test.tsv
+│   │   ├── train_tfidf.tsv
+│   │   └── train.tsv
+├── dataloader.py
+├── documents.py
+├── extraction_terminology.py
+├── gold_annotated.py
+├── images
+│   ├── testing.png
+│   └── training.png
+├── inference
+│   ├── clean_inference.txt
+│   ├── clean.py
+│   ├── g.py
+│   └── inference.txt
+├── models
+│   ├── bert-crf.py
+│   ├── bilstm_crf.py
+│   └── rule_based_extraction.py
+├── output
+│   ├── chkpt
+│   │   ├── markable-bi-lstm-td-model-2.hdf5
+│   │   ├── markable-bi-lstm-td-model.hdf5
+│   │   ├── markable-bi-lstm-td-model-pointwise.hdf5
+│   │   └── markable-bi-lstm-td-model-tfidf.hdf5
+│   ├── extracted_gold.txt
+│   ├── extracted_nn.txt
+│   ├── extracted_rule.txt
+│   ├── extracted_terminology_multiword_analysed.csv
+│   ├── extracted_terminology_multiword.csv
+│   ├── extracted_terms_multi_pointwise_analysed.csv
+│   ├── extracted_terms_multi_tfidf_analysed.csv
+│   ├── extracted_terms_multi_tfidf.csv
+│   ├── incorrect_sentence_new.txt
+│   ├── incorrect_sentence_tfidf.txt
+│   ├── tag2idx.pk
+│   └── tag2idx_tdidf.pk
+├── params.py
+├── README.md
+├── rule_based_extraction.py
+├── run_train.sh
+├── silver_annotated.py
+├── term_extraction.py
+├── test.tsv
+├── train.tsv
+└── utils.py
+
+8 directories, 78 files
+    
+    ```
 
 
 ## Introduction
